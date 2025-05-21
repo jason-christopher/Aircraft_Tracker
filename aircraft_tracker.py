@@ -19,7 +19,7 @@ ADSB_KEY = str(os.getenv("ADSB_KEY"))
 
 # --- SETTINGS ---
 
-distance_check = 50
+distance_check = 30
 
 # --- FUNCTIONS ---
 
@@ -90,6 +90,46 @@ def check_nearby_aircraft():
           type = 'E-3G AWACS'
         elif type == 'H47':
           type = 'H-47 Chinook'
+        elif type == 'T38':
+          type = 'T-38 Talon'
+        elif type == 'C17':
+          type = 'C-17A Globemaster'
+        elif type == 'H64':
+          type = 'AH-64 Apache'
+        elif type == 'K35R':
+          type = 'KC-135R Stratotanker'
+        elif type == 'H60':
+          type = 'H-60 Black Hawk'
+        elif type == 'C130':
+          type = 'C-130 Hercules'
+        elif type == 'V22':
+          type = 'V-22 Osprey'
+        elif type == 'H53S':
+          type = 'H-53 Sea Stallion'
+        elif type == 'E2':
+          type = 'E-2 Hawkeye'
+        elif type == 'EC45':
+          type = 'EC-145'
+        elif type == 'B737':
+          type = 'C-40A Clipper'
+        elif type == 'C27J':
+          type = 'HC-27J Spartan'
+        elif type == 'BE20':
+          type = 'BEECH 20 Super King Air'
+        elif type == 'P8':
+          type = 'P-8 Poseidon'
+        elif type == 'C30J':
+          type = 'C-130J Super Hercules'
+        elif type == 'A119':
+          type = 'TH-73A Thrasher'
+        elif type == 'HAWK':
+          type = 'T-45 Goshawk'
+        elif type == 'B762':
+          type = 'KC-46A Pegasus'
+        elif type == 'C5M':
+          type = 'C-5M Galaxy'
+        elif type == 'C560':
+          type = 'C-35 Citation'
       heading_raw = float(plane['track']) if plane['track'] else None
       if heading_raw:
         if heading_raw <=22.5:
@@ -121,10 +161,10 @@ def check_nearby_aircraft():
           msg += f"'{callsign}' squawking {squawk} {distance:.2f} miles away at {altitude:,} ft.\n"
 
     except Exception as e:
-      print(f"Error processing {callsign}: {e}")
+      print(f"Error processing aircraft: {e}")
   print(msg)
-  # # if msg:
-  #   # send_sms(msg)
+  # if msg:
+  #   send_sms(msg)
 
 # --- MAIN LOOP ---
 
