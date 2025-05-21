@@ -59,6 +59,23 @@ python aircraft_tracker.py
 
 ---
 
+## 🎯 Adjusting Detection Distance
+
+By default, the app looks for aircraft within **30 miles** of your location.
+
+To change this:
+
+1. Open `aircraft_tracker.py `
+2. Find this line near the top:
+
+```python
+DISTANCE_THRESHOLD_MILES = 30
+```
+
+3. Change `30` to whatever radius (in miles) you want to monitor.
+
+---
+
 ## 📤 Alert Output Example
 
 ```
