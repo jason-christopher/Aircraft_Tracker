@@ -13,6 +13,10 @@ load_dotenv()
 
 MY_LAT = float(os.getenv("MY_LAT"))
 MY_LON = float(os.getenv("MY_LON"))
+TWILIO_SID = str(os.getenv("TWILIO_SID"))
+TWILIO_AUTH_TOKEN = str(os.getenv("TWILIO_AUTH_TOKEN"))
+TWILIO_FROM = str(os.getenv("TWILIO_FROM"))
+TWILIO_TO = str(os.getenv("TWILIO_TO"))
 
 # --- SETTINGS ---
 
@@ -22,13 +26,14 @@ NON_MIL_CALLSIGN_PREFIXES = [
   "ENY", "ASH", "RPA", "PDT", "EDV", "AWI", "QXE",
   "FDX", "UPS", "GTI", "ABX",
   "BAW", "AFR", "KLM", "DLH", "ACA", "QFA", "JAL", "ANA", "UAE", "THY", 
-  "CXK", "SCU", "SKU", "JIA",
+  "CXK", "SCU", "SKU", "JIA", "FFP", "TCN", "OUA", "OST", "KOW", "UCA",
+  "LXJ",
 ]
 
 # --- FUNCTIONS ---
 
 def get_aircraft():
-  url = "https://opensky-network.org/api/states/all?lamin=35.0000&lomin=-98.0000&lamax=36.0000&lomax=-97.0000"
+  url = "https://opensky-network.org/api/states/all?lamin=34.0000&lomin=-99.0000&lamax=37.0000&lomax=-96.0000"
   response = requests.get(url)
   if response.status_code == 200:
     return response.json().get('states', [])
@@ -46,14 +51,15 @@ def is_military(callsign):
   return True
 
 def send_sms(message):
-    client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
-    client.messages.create(body=message, from_=TWILIO_FROM, to=TWILIO_TO)
+  client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
+  client.messages.create(body=message, from_=TWILIO_FROM, to=TWILIO_TO)
 
 def check_nearby_aircraft():
   aircraft_list = get_aircraft()
+  msg = ''
 
   # Set desired distance
-  distance_check = 90
+  distance_check = 50
 
   # Iterate through planes
   for plane in aircraft_list:
@@ -72,18 +78,19 @@ def check_nearby_aircraft():
         if is_military(callsign):
           distance = geodesic((MY_LAT, MY_LON), (lat, lon)).miles
           if distance <= distance_check:
-            msg = f"Military aircraft '{callsign}' detected {distance:.2f} miles away at {altitude} feet."
-            print(msg)
-            # send_sms(msg)
+            msg += f"Military aircraft '{callsign}' detected {distance:.2f} miles away at {altitude:.0f} feet.\n"
         
         # Check for emergency
         if squawk in [7500, 7600, 7700]:
           distance = geodesic((MY_LAT, MY_LON), (lat, lon)).miles
           if distance <= distance_check:
-            msg = f"'{callsign}' squawking {squawk} {distance:.2f} miles away at {altitude} feet."
-            print(msg)
+            msg += f"'{callsign}' squawking {squawk} {distance:.2f} miles away at {altitude:.0f} feet.\n"
+
     except Exception as e:
       print(f"Error processing aircraft: {e}")
+  print(msg)
+  # if msg:
+    # send_sms(msg)
 
 # --- MAIN LOOP ---
 
