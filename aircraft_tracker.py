@@ -1,4 +1,3 @@
-
 import os
 import requests
 from geopy.distance import geodesic
@@ -6,31 +5,53 @@ from twilio.rest import Client
 from dotenv import load_dotenv
 
 # --- LOAD .ENV ---
-
 load_dotenv()
 
 MY_LAT = float(os.getenv("MY_LAT"))
 MY_LON = float(os.getenv("MY_LON"))
-TWILIO_SID = str(os.getenv("TWILIO_SID"))
-TWILIO_AUTH_TOKEN = str(os.getenv("TWILIO_AUTH_TOKEN"))
-TWILIO_FROM = str(os.getenv("TWILIO_FROM"))
-TWILIO_TO = str(os.getenv("TWILIO_TO"))
-ADSB_KEY = str(os.getenv("ADSB_KEY"))
+TWILIO_SID = os.getenv("TWILIO_SID")
+TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
+TWILIO_FROM = os.getenv("TWILIO_FROM")
+TWILIO_TO = os.getenv("TWILIO_TO")
+ADSB_KEY = os.getenv("ADSB_KEY")
 
 # --- SETTINGS ---
+DISTANCE_THRESHOLD_MILES = 30
 
-distance_check = 30
+# --- TYPE TRANSLATION MAP ---
+TYPE_MAP = {
+  'TEX2': 'T-6 Texan II',
+  'R135': 'RC-135 Rivet Joint',
+  'E3TF': 'E-3G AWACS',
+  'H47': 'H-47 Chinook',
+  'T38': 'T-38 Talon',
+  'C17': 'C-17A Globemaster',
+  'H64': 'AH-64 Apache',
+  'K35R': 'KC-135R Stratotanker',
+  'H60': 'H-60 Black Hawk',
+  'C130': 'C-130 Hercules',
+  'V22': 'V-22 Osprey',
+  'H53S': 'H-53 Sea Stallion',
+  'E2': 'E-2 Hawkeye',
+  'EC45': 'EC-145',
+  'B737': 'C-40A Clipper',
+  'C27J': 'HC-27J Spartan',
+  'BE20': 'BEECH 20 Super King Air',
+  'P8': 'P-8 Poseidon',
+  'C30J': 'C-130J Super Hercules',
+  'A119': 'TH-73A Thrasher',
+  'HAWK': 'T-45 Goshawk',
+  'B762': 'KC-46A Pegasus',
+  'C5M': 'C-5M Galaxy',
+  'C560': 'C-35 Citation'
+}
+
+DIRECTION_MAP = [
+  (22.5, 'N'), (67.5, 'NE'), (112.5, 'E'), (157.5, 'SE'),
+  (202.5, 'S'), (247.5, 'SW'), (292.5, 'W'), (337.5, 'NW')
+]
 
 # --- FUNCTIONS ---
-
-def get_aircraft_open_sky():
-  url = "https://opensky-network.org/api/states/all?lamin=34.0000&lomin=-99.0000&lamax=37.0000&lomax=-96.0000"
-  response = requests.get(url)
-  if response.status_code == 200:
-    return response.json().get('states', [])
-  else:
-    return []
-  
 def get_aircraft_ads_b():
   url = "https://adsbexchange-com1.p.rapidapi.com/v2/mil"
   headers = {
@@ -38,31 +59,33 @@ def get_aircraft_ads_b():
     "x-rapidapi-host": "adsbexchange-com1.p.rapidapi.com"
   }
   response = requests.get(url, headers=headers)
-  if response.status_code == 200:
-    aircraft_list = response.json()["ac"]
-
-    # Create list of filtered aircraft based on location
-    filtered_aircraft_list = []
-
-    # Iterate through each aircraft to filter by location
-    for plane in aircraft_list:
-      # Some aircraft may not have a 'lat' or 'lon' key
-      try: 
-        lat = float(plane['lat']) if plane['lat'] else None
-        lon = float(plane['lon']) if plane['lon'] else None
-        alt = int(plane['alt_baro']) if plane['alt_baro']!='ground' else 'ground'
-
-        if lat and lon and alt!='ground':
-          distance = geodesic((MY_LAT, MY_LON), (lat, lon)).miles
-          if distance <= distance_check:
-            filtered_aircraft_list.append(plane)
-      except:
-        continue
-    
-    # print(filtered_aircraft_list)
-    return filtered_aircraft_list
-  else:
+  if response.status_code != 200:
     return []
+
+  aircraft_list = response.json().get("ac", [])
+  filtered_aircraft = []
+
+  for plane in aircraft_list:
+    try:
+      lat = float(plane.get('lat', 0) or 0)
+      lon = float(plane.get('lon', 0) or 0)
+      alt = plane.get('alt_baro')
+      if lat and lon and alt != 'ground':
+        distance = geodesic((MY_LAT, MY_LON), (lat, lon)).miles
+        if distance <= DISTANCE_THRESHOLD_MILES:
+          filtered_aircraft.append(plane)
+    except:
+      continue
+
+  return filtered_aircraft
+
+def get_heading_label(track):
+  if track is None:
+    return None
+  for angle, label in DIRECTION_MAP:
+    if track <= angle:
+      return label
+  return 'N'
 
 def send_sms(message):
   client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
@@ -70,103 +93,44 @@ def send_sms(message):
 
 def check_nearby_aircraft():
   aircraft_list = get_aircraft_ads_b()
-  msg = ''
+  messages = []
 
-  # Iterate through planes
   for plane in aircraft_list:
     try:
-      callsign = plane['flight'].strip().upper()
-      squawk = int(plane['squawk']) if plane['squawk'] else None
-      altitude = int(plane['alt_baro']) if plane['alt_baro'] else 'Unavailable'
+      callsign = plane.get('flight', '').strip().upper()
+      if not callsign or callsign == '0':
+        continue
+
+      squawk = int(plane['squawk']) if plane.get('squawk') else None
+      altitude = plane.get('alt_baro', 'Unavailable')
+      if isinstance(altitude, (int, float)):
+        altitude_fmt = f"{int(altitude):,} ft"
+      else:
+        altitude_fmt = str(altitude)
+
       lat = float(plane['lat'])
       lon = float(plane['lon'])
-      type = str(plane['t']) if plane['t'] else None
-      if type:
-        if type == 'TEX2':
-          type = 'T-6 Texan II'
-        elif type == 'R135':
-          type = 'RC-135 Rivet Joint'
-        elif type == 'E3TF':
-          type = 'E-3G AWACS'
-        elif type == 'H47':
-          type = 'H-47 Chinook'
-        elif type == 'T38':
-          type = 'T-38 Talon'
-        elif type == 'C17':
-          type = 'C-17A Globemaster'
-        elif type == 'H64':
-          type = 'AH-64 Apache'
-        elif type == 'K35R':
-          type = 'KC-135R Stratotanker'
-        elif type == 'H60':
-          type = 'H-60 Black Hawk'
-        elif type == 'C130':
-          type = 'C-130 Hercules'
-        elif type == 'V22':
-          type = 'V-22 Osprey'
-        elif type == 'H53S':
-          type = 'H-53 Sea Stallion'
-        elif type == 'E2':
-          type = 'E-2 Hawkeye'
-        elif type == 'EC45':
-          type = 'EC-145'
-        elif type == 'B737':
-          type = 'C-40A Clipper'
-        elif type == 'C27J':
-          type = 'HC-27J Spartan'
-        elif type == 'BE20':
-          type = 'BEECH 20 Super King Air'
-        elif type == 'P8':
-          type = 'P-8 Poseidon'
-        elif type == 'C30J':
-          type = 'C-130J Super Hercules'
-        elif type == 'A119':
-          type = 'TH-73A Thrasher'
-        elif type == 'HAWK':
-          type = 'T-45 Goshawk'
-        elif type == 'B762':
-          type = 'KC-46A Pegasus'
-        elif type == 'C5M':
-          type = 'C-5M Galaxy'
-        elif type == 'C560':
-          type = 'C-35 Citation'
-      heading_raw = float(plane['track']) if plane['track'] else None
-      if heading_raw:
-        if heading_raw <=22.5:
-          heading = 'N'
-        elif heading_raw <=67.5:
-          heading = 'NE'
-        elif heading_raw <=112.5:
-          heading = 'E'
-        elif heading_raw <=157.5:
-          heading = 'SE'
-        elif heading_raw <=202.5:
-          heading = 'S'
-        elif heading_raw <=247.5:
-          heading = 'SW'
-        elif heading_raw <=292.5:
-          heading = 'W'
-        elif heading_raw <=337.5:
-          heading = 'NW'
-        else:
-          heading = None
       distance = geodesic((MY_LAT, MY_LON), (lat, lon)).miles
 
-      # Check criteria
-      if callsign and callsign != '0':
-        msg += f"{callsign} ({type}) detected {distance:.1f} miles away at {altitude:,} ft{', heading ' + heading if heading else ''}.\n"
-        
-        # Check for emergency
-        if squawk in [7500, 7600, 7700]:
-          msg += f"'{callsign}' squawking {squawk} {distance:.2f} miles away at {altitude:,} ft.\n"
+      aircraft_type = TYPE_MAP.get(plane.get('t', '').upper(), plane.get('t'))
+      heading = get_heading_label(plane.get('track'))
+
+      description = f"{callsign} ({aircraft_type}) detected {distance:.1f} miles away at {altitude_fmt}"
+      if heading:
+        description += f", heading {heading}"
+      messages.append(description + ".")
+
+      if squawk in [7500, 7600, 7700]:
+        messages.append(f"'{callsign}' squawking {squawk} at {altitude_fmt}, {distance:.2f} miles away.")
 
     except Exception as e:
       print(f"Error processing aircraft: {e}")
-  print(msg)
-  # if msg:
-  #   send_sms(msg)
+
+  if messages:
+    msg = "\n".join(messages)
+    print(msg)
+    # send_sms(msg)
 
 # --- MAIN LOOP ---
-
 if __name__ == "__main__":
   check_nearby_aircraft()
