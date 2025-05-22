@@ -16,7 +16,7 @@ TWILIO_TO = os.getenv("TWILIO_TO")
 ADSB_KEY = os.getenv("ADSB_KEY")
 
 # --- SETTINGS ---
-DISTANCE_THRESHOLD_MILES = 30
+DISTANCE_THRESHOLD_MILES = 20
 
 # --- TYPE TRANSLATION MAP ---
 TYPE_MAP = {
@@ -36,14 +36,17 @@ TYPE_MAP = {
   'EC45': 'EC-145',
   'B737': 'C-40A Clipper',
   'C27J': 'HC-27J Spartan',
-  'BE20': 'BEECH 20 Super King Air',
+  'BE20': 'C-12 Huron',
   'P8': 'P-8 Poseidon',
   'C30J': 'C-130J Super Hercules',
   'A119': 'TH-73A Thrasher',
   'HAWK': 'T-45 Goshawk',
   'B762': 'KC-46A Pegasus',
   'C5M': 'C-5M Galaxy',
-  'C560': 'C-35 Citation'
+  'C560': 'C-35 Citation',
+  'SW4': 'C-26 Metro III',
+  'Q1': 'RQ-1 Predator',
+  'GLF5': 'C-37',
 }
 
 DIRECTION_MAP = [
