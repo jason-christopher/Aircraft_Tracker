@@ -47,6 +47,7 @@ TYPE_MAP = {
   'SW4': 'C-26 Metro III',
   'Q1': 'RQ-1 Predator',
   'GLF5': 'C-37',
+  'F5': 'F-5 Tiger II',
 }
 
 DIRECTION_MAP = [
