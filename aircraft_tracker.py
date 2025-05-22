@@ -16,12 +16,13 @@ TWILIO_TO = os.getenv("TWILIO_TO")
 ADSB_KEY = os.getenv("ADSB_KEY")
 
 # --- SETTINGS ---
-DISTANCE_THRESHOLD_MILES = 20
+DISTANCE_THRESHOLD_MILES = 75
 
 # --- TYPE TRANSLATION MAP ---
 TYPE_MAP = {
   'TEX2': 'T-6 Texan II',
   'R135': 'RC-135 Rivet Joint',
+  'W135': 'WC-135R',
   'E3TF': 'E-3G AWACS',
   'H47': 'H-47 Chinook',
   'T38': 'T-38 Talon',
@@ -38,6 +39,7 @@ TYPE_MAP = {
   'C27J': 'HC-27J Spartan',
   'BE20': 'C-12 Huron',
   'P8': 'P-8 Poseidon',
+  'P8 ?': 'P-8 Poseidon',
   'C30J': 'C-130J Super Hercules',
   'A119': 'TH-73A Thrasher',
   'HAWK': 'T-45 Goshawk',
@@ -48,6 +50,8 @@ TYPE_MAP = {
   'Q1': 'RQ-1 Predator',
   'GLF5': 'C-37',
   'F5': 'F-5 Tiger II',
+  'E6': 'E-6B TACAMO',
+  'B52': 'B-52H Stratofortress',
 }
 
 DIRECTION_MAP = [
@@ -102,7 +106,9 @@ def check_nearby_aircraft():
   for plane in aircraft_list:
     try:
       callsign = plane.get('flight', '').strip().upper()
-      if not callsign or callsign == '0':
+      if callsign == '0' or callsign == '00000000':
+        callsign = 'Unknown Callsign'
+      if not callsign:
         continue
 
       squawk = int(plane['squawk']) if plane.get('squawk') else None
@@ -131,9 +137,10 @@ def check_nearby_aircraft():
       print(f"Error processing aircraft: {e}")
 
   if messages:
-    msg = "\n".join(messages)
-    print(msg)
-    # send_sms(msg)
+    console_msg = "\n".join(messages)
+    sms_msg = "  ".join(messages)
+    print(console_msg)
+    # send_sms(sms_msg)
 
 # --- MAIN LOOP ---
 if __name__ == "__main__":
