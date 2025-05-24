@@ -3,6 +3,7 @@ import requests
 from geopy.distance import geodesic
 from twilio.rest import Client
 from dotenv import load_dotenv
+from mapping import TYPE_MAP, DIRECTION_MAP
 
 # --- LOAD .ENV ---
 load_dotenv()
@@ -17,47 +18,6 @@ ADSB_KEY = os.getenv("ADSB_KEY")
 
 # --- SETTINGS ---
 DISTANCE_THRESHOLD_MILES = 75
-
-# --- TYPE TRANSLATION MAP ---
-TYPE_MAP = {
-  'TEX2': 'T-6 Texan II',
-  'R135': 'RC-135 Rivet Joint',
-  'W135': 'WC-135R',
-  'E3TF': 'E-3G AWACS',
-  'H47': 'H-47 Chinook',
-  'T38': 'T-38 Talon',
-  'C17': 'C-17A Globemaster',
-  'H64': 'AH-64 Apache',
-  'K35R': 'KC-135R Stratotanker',
-  'H60': 'H-60 Black Hawk',
-  'C130': 'C-130 Hercules',
-  'V22': 'V-22 Osprey',
-  'H53S': 'H-53 Sea Stallion',
-  'E2': 'E-2 Hawkeye',
-  'EC45': 'EC-145',
-  'B737': 'C-40A Clipper',
-  'C27J': 'HC-27J Spartan',
-  'BE20': 'C-12 Huron',
-  'P8': 'P-8 Poseidon',
-  'P8 ?': 'P-8 Poseidon',
-  'C30J': 'C-130J Super Hercules',
-  'A119': 'TH-73A Thrasher',
-  'HAWK': 'T-45 Goshawk',
-  'B762': 'KC-46A Pegasus',
-  'C5M': 'C-5M Galaxy',
-  'C560': 'C-35 Citation',
-  'SW4': 'C-26 Metro III',
-  'Q1': 'RQ-1 Predator',
-  'GLF5': 'C-37',
-  'F5': 'F-5 Tiger II',
-  'E6': 'E-6B TACAMO',
-  'B52': 'B-52H Stratofortress',
-}
-
-DIRECTION_MAP = [
-  (22.5, 'N'), (67.5, 'NE'), (112.5, 'E'), (157.5, 'SE'),
-  (202.5, 'S'), (247.5, 'SW'), (292.5, 'W'), (337.5, 'NW')
-]
 
 # --- FUNCTIONS ---
 def get_aircraft_ads_b():
