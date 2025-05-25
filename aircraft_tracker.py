@@ -102,6 +102,7 @@ def check_nearby_aircraft():
     print(console_msg)
     # send_sms(sms_msg)
 
+
 # --- MAIN LOOP ---
 if __name__ == "__main__":
   check_nearby_aircraft()
