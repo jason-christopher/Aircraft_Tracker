@@ -37,8 +37,9 @@ def get_aircraft_ads_b():
     try:
       lat = float(plane.get('lat', 0) or 0)
       lon = float(plane.get('lon', 0) or 0)
+      own_op = plane.get('ownOp', '').strip()
       alt = plane.get('alt_baro')
-      if lat and lon and alt != 'ground':
+      if lat and lon and alt != 'ground' and (own_op == '' or 'United States' in own_op):
         distance = geodesic((MY_LAT, MY_LON), (lat, lon)).miles
         if distance <= DISTANCE_THRESHOLD_MILES:
           filtered_aircraft.append(plane)
