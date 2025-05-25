@@ -1,3 +1,4 @@
+hex,callsign,datetime,squawk,altitude,latitude,longitude,type,heading,ground speed,indicated airspeed
 ae1235,RCH863,2025-05-24 14:56:54.216180,727,34000,46.949306,-113.361664,C-17A Globemaster,290,443,
 ae1449,RCH045,2025-05-24 14:56:54.216208,7376,36000,38.985828,-97.424042,C-17A Globemaster,249,388,
 ae20c6,RCH878,2025-05-24 14:56:54.216218,1772,34975,41.83287,-85.72242,C-17A Globemaster,82,530,
