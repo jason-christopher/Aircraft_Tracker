@@ -1,2 +1,5 @@
-hex,callsign,datetime,operator,tail number,squawk,altitude,latitude,longitude,type,heading,ground speed,indicated airspeed
-ae49c4,RCH437,2025-05-24 22:35:31.041296,,09-9208,771,33000,44.37442,-64.997345,C-17A Globemaster,50,486,
+hex,callsign,datetime,operator,tail number,squawk,altitude,latitude,longitude,type,heading,ground speed
+ae1177,MCFAMC,2025-05-25 13:45:24.738422,United States Air Force,02-1105,0012,34004,39.617386,-134.587841,C-17A Globemaster,236,417
+ae080e,RCH808,2025-05-25 13:45:24.738456,United States Air Force,99-0168,0750,20850,35.141797,-79.702955,C-17A Globemaster,27,432
+ae07f8,TEDDY45,2025-05-25 13:45:24.738465,Usaf | 437aw [kchs],97-0046,1501,6150,41.664431,-73.54014,C-17A Globemaster,331,247
+ae117d,RCH406,2025-05-25 13:45:24.738472,United States Air Force,02-1111,6115,36000,42.592583,-72.389797,C-17A Globemaster,221,443
