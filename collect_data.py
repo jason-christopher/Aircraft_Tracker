@@ -138,7 +138,7 @@ if __name__ == "__main__":
       writer = csv.DictWriter(f, fieldnames=fieldnames)
       writer.writeheader()
 
-  for i in range(MINUTES_TO_RUN = 180):
+  for i in range(MINUTES_TO_RUN):
     try:
       nested_dict = collect_data()
       aircraft_data = list(nested_dict.values()) 
