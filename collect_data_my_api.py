@@ -121,6 +121,8 @@ if __name__ == "__main__":
           'heading',
           'ground speed',
           ]
+  
+  MINUTES_TO_RUN = 180
 
   # Write header only if file doesn't exist
   if not os.path.exists(output_file):
@@ -128,7 +130,7 @@ if __name__ == "__main__":
       writer = csv.DictWriter(f, fieldnames=fieldnames)
       writer.writeheader()
 
-  for i in range(60):
+  for i in range(MINUTES_TO_RUN):
     try:
       nested_dict = collect_data()
       aircraft_data = list(nested_dict.values()) 
@@ -137,10 +139,10 @@ if __name__ == "__main__":
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writerows(aircraft_data)
 
-      print(f"Run {i+1}/60: Saved {len(aircraft_data)} aircraft.")
+      print(f"Run {i+1}/{MINUTES_TO_RUN}: Saved {len(aircraft_data)} aircraft.")
 
     except Exception as e:
       with open("error_log.txt", 'a') as err:
         err.write(f"[{datetime.now()}] Error: {str(e)}\n")
 
-    time.sleep(60)
+    time.sleep(MINUTES_TO_RUN)
