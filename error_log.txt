@@ -1,0 +1,1 @@
+[2025-05-25 17:55:24.009286] Error: HTTPSConnectionPool(host='api.adsb.one', port=443): Max retries exceeded with url: /v2/mil (Caused by ConnectTimeoutError(<urllib3.connection.HTTPSConnection object at 0x10886a650>, 'Connection to api.adsb.one timed out. (connect timeout=None)'))

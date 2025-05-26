@@ -44,7 +44,6 @@ def get_aircraft_ads_b():
         distance = geodesic((MY_LAT, MY_LON), (lat, lon)).miles
         if distance <= DISTANCE_THRESHOLD_MILES:
           filtered_aircraft.append(plane)
-          print(plane)
     except:
       continue
   return filtered_aircraft
@@ -123,6 +122,7 @@ if __name__ == "__main__":
           ]
   
   MINUTES_TO_RUN = 180
+  MINUTES_BETWEEN_RUNS = 1
 
   # Write header only if file doesn't exist
   if not os.path.exists(output_file):
@@ -145,4 +145,4 @@ if __name__ == "__main__":
       with open("error_log.txt", 'a') as err:
         err.write(f"[{datetime.now()}] Error: {str(e)}\n")
 
-    time.sleep(MINUTES_TO_RUN)
+    time.sleep(MINUTES_BETWEEN_RUNS*60)
