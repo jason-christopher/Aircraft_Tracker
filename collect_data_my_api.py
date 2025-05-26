@@ -59,12 +59,10 @@ def collect_data():
         unix_time = int(time.time())
         hex = str(plane.get('hex'))
         unique_key = str(unix_time) + '-' + hex
-        callsign = plane.get('flight', '').strip().upper()
+        callsign = plane.get('flight', 'Unknown Callsign').strip().upper()
 
         if callsign == '0' or callsign == '00000000':
           callsign = 'Unknown Callsign'
-        if not callsign:
-          continue
 
         squawk = plane.get('squawk', 'Unavailable')
         altitude = plane.get('alt_baro', 'Unavailable')
