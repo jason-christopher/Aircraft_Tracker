@@ -127,7 +127,7 @@ if __name__ == "__main__":
           'ground speed',
           ]
   
-  MINUTES_TO_RUN = 30
+  MINUTES_TO_RUN = 120
   MINUTES_BETWEEN_RUNS = 1
 
   # Write header only if file doesn't exist

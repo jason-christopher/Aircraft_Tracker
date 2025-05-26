@@ -145,4 +145,5 @@ MILITARY_BASES = {
   "CGAS San Francisco": {"lat": 37.6180, "lon": -122.3750},
   "CGAS Traverse City": {"lat": 44.7430, "lon": -85.5840},
   "Stewart ANGB": {"lat": 41.5030, "lon": -74.0950},
+  "Pittsburgh International (PA ANGB)": {"lat": 40.4929, "lon": -80.2373},
 }
