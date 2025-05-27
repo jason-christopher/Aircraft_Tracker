@@ -17,6 +17,9 @@ MY_LON = float(os.getenv("MY_LON"))
 DISTANCE_THRESHOLD_MILES = 3000
 TYPES_TO_SEARCH = ['C17', 'E3TF']
 
+# --- MISSING INFO DICTIONARY ---
+missing_info_dict = {}
+
 # --- FUNCTIONS ---
 def contains_no_substring_from_list(main_string, substring_list):
   for sub in substring_list: 
@@ -39,17 +42,25 @@ def get_aircraft_ads_b():
   # Filter aircraft and add to final list
   for plane in aircraft_list:
     try:
-      lat = float(plane.get('lat', 0) or 0)
-      lon = float(plane.get('lon', 0) or 0)
+      lat = plane.get('lat', None)
+      lon = plane.get('lon', None)
       own_op = plane.get('ownOp', '')
-      alt = plane.get('alt_baro')
+      alt = plane.get('alt_baro', 'Unknown')
+
+      # Back-up lat/lon
+      if not lat:
+        lat = plane.get('rr_lat', None)
+      if not lon:
+        lon = plane.get('rr_lon', None)
+
       if lat and lon and alt != 'ground':
         # Filter to only US aircraft
         if contains_no_substring_from_list(own_op, ['Canad', 'Israel', 'United Kingdom', 'Royal', 'Australia', 'Mexic']):
-          distance = geodesic((MY_LAT, MY_LON), (lat, lon)).miles
+          distance = geodesic((MY_LAT, MY_LON), (float(lat), float(lon))).miles
           if distance <= DISTANCE_THRESHOLD_MILES:
             filtered_aircraft.append(plane)
-    except:
+    except Exception as e:
+      # print(f"Error processing aircraft: {e}")
       continue
   return filtered_aircraft
 
@@ -61,6 +72,7 @@ def collect_data():
   for plane in aircraft_list:
     try:
       if plane.get('t', '').strip().upper() in TYPES_TO_SEARCH:
+        degraded = False
         unix_time = int(time.time())
         hex = str(plane.get('hex'))
         unique_key = str(unix_time) + '-' + hex
@@ -76,13 +88,35 @@ def collect_data():
         else:
           altitude = str(altitude)
 
-        lat = float(plane['lat'])
-        lon = float(plane['lon'])
+        lat = plane.get('lat', None)
+        lon = plane.get('lon', None)
+        # Back-up lat/lon
+        if not lat:
+          lat = plane.get('rr_lat', None)
+          degraded = True
+        if not lon:
+          lon = plane.get('rr_lon', None)
+          degraded = True
+
         tail_number = str(plane.get('r', ''))
         own_op = plane.get('ownOp', '')
         aircraft_type = TYPE_MAP.get(plane.get('t', '').upper(), plane.get('t'))
         heading = int(plane.get('track')) if isinstance(plane.get('track'), (int, float)) else None
         ground_speed = int(plane.get('gs')) if isinstance(plane.get('gs'), (int, float)) else None
+
+        # Update missing info dictionary
+        if callsign != 'UNKNOWN CALLSIGN' and squawk != 'Unavailable':
+          missing_info_dict[hex] = {
+            'callsign': callsign,
+            'squawk': squawk,
+          }
+
+        # Update missing info with dictionary info
+        if hex in missing_info_dict:
+          if callsign == 'UNKNOWN CALLSIGN':
+            callsign = missing_info_dict[hex]['callsign']
+          if squawk == 'Unavailable':
+            squawk = missing_info_dict[hex]['squawk']
 
         # Add to dictionary
         aircraft_dict[unique_key] = {
@@ -93,11 +127,12 @@ def collect_data():
           'tail number': tail_number,
           'squawk': squawk,
           'altitude': altitude,
-          'latitude': lat,
-          'longitude': lon,
+          'latitude': float(lat) if lat else 'UNKNOWN LAT',
+          'longitude': float(lon) if lon else 'UNKNOWN LON',
           'type': aircraft_type,
           'heading': heading,
           'ground speed': ground_speed,
+          'degraded': degraded,
         }
 
     except Exception as e:
@@ -125,6 +160,7 @@ if __name__ == "__main__":
           'type',
           'heading',
           'ground speed',
+          'degraded',
           ]
   
   MINUTES_TO_RUN = 120

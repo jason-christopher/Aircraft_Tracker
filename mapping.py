@@ -18,6 +18,8 @@ TYPE_MAP = {
   'B737': 'C-40A Clipper',
   'C27J': 'HC-27J Spartan',
   'BE20': 'C-12 Huron',
+  'BE40': 'T-1 Jayhawk',
+  'B350': 'MC-12',
   'P8': 'P-8 Poseidon',
   'P8 ?': 'P-8 Poseidon',
   'C30J': 'C-130J Super Hercules',
@@ -32,6 +34,8 @@ TYPE_MAP = {
   'F5': 'F-5 Tiger II',
   'E6': 'E-6B TACAMO',
   'B52': 'B-52H Stratofortress',
+  'F35': 'F-35 Lightning II',
+  'BT7': 'T-7 Red Hawk',
 }
 
 DIRECTION_MAP = [
@@ -146,4 +150,5 @@ MILITARY_BASES = {
   "CGAS Traverse City": {"lat": 44.7430, "lon": -85.5840},
   "Stewart ANGB": {"lat": 41.5030, "lon": -74.0950},
   "Pittsburgh International (PA ANGB)": {"lat": 40.4929, "lon": -80.2373},
+  "Ellington Field Joint Reserve Base": {"lat": 29.6019, "lon": -95.1639},
 }
