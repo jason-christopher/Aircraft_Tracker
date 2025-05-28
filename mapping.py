@@ -37,6 +37,8 @@ TYPE_MAP = {
   'F35': 'F-35 Lightning II',
   'BT7': 'T-7 Red Hawk',
   'F18S': 'F/A-18 Hornet',
+  'B742': 'E-4B Nightwatch',
+  'B752': 'C-32 AIR FORCE TWO',
 }
 
 DIRECTION_MAP = [
@@ -151,5 +153,7 @@ MILITARY_BASES = {
   "CGAS Traverse City": {"lat": 44.7430, "lon": -85.5840},
   "Stewart ANGB": {"lat": 41.5030, "lon": -74.0950},
   "Pittsburgh International (PA ANGB)": {"lat": 40.4929, "lon": -80.2373},
-  "Ellington Field Joint Reserve Base": {"lat": 29.6019, "lon": -95.1639},
+  "Ellington Field JRB": {"lat": 29.6019, "lon": -95.1639},
+  "Westover ARB": {"lat": 42.1971, "lon": -72.5302},
+  "Atlantic City International (NJ ANG)": {"lat": 39.4585, "lon": -74.5773},
 }

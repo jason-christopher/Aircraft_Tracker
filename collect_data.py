@@ -16,8 +16,10 @@ MY_LON = float(os.getenv("MY_LON"))
 
 # --- SETTINGS ---
 DISTANCE_THRESHOLD_MILES = 3000
-NEARBY_DISTANCE_THRESHOLD_MILES = 50
-TYPES_TO_SEARCH = ['C17', 'E3TF']
+NEARBY_DISTANCE_THRESHOLD_MILES = 10
+TYPES_TO_SEARCH = ['C17', 'E3TF', 'B742', 'B52', 'F35', 'F18S', 'C5M', 'E6', 'R135', 'W135', 'E2', 'B752']
+MINUTES_TO_RUN = 120
+MINUTES_BETWEEN_RUNS = 1
 
 # --- MISSING INFO DICTIONARY ---
 missing_info_dict = {}
@@ -79,17 +81,14 @@ def collect_data():
         hex = str(plane.get('hex'))
         unique_key = str(unix_time) + '-' + hex
         callsign = plane.get('flight', 'UNKNOWN CALLSIGN').strip().upper()
-
-        if callsign == '0' or callsign == '00000000':
+        if callsign == '0' or callsign == '00000000' or callsign == '':
           callsign = 'UNKNOWN CALLSIGN'
-
         squawk = plane.get('squawk', 'Unavailable')
         altitude = plane.get('alt_baro', 'Unavailable')
         if isinstance(altitude, (int, float)):
           altitude = int(altitude)
         else:
           altitude = str(altitude)
-
         lat = plane.get('lat', None)
         lon = plane.get('lon', None)
         # Back-up lat/lon
@@ -99,10 +98,12 @@ def collect_data():
         if not lon:
           lon = plane.get('rr_lon', None)
           degraded = True
-
         tail_number = str(plane.get('r', ''))
         own_op = plane.get('ownOp', '')
         aircraft_type = TYPE_MAP.get(plane.get('t', '').upper(), plane.get('t'))
+        desc = plane.get('desc', '')
+        if 'VC-25' in desc:
+          aircraft_type = 'AIR FORCE ONE'
         heading = int(plane.get('track')) if isinstance(plane.get('track'), (int, float)) else None
         ground_speed = int(plane.get('gs')) if isinstance(plane.get('gs'), (int, float)) else None
 
@@ -151,7 +152,7 @@ def collect_data():
 if __name__ == "__main__":
 
   # Output file name
-  output_file = "aircraft_data_new.csv"
+  output_file = "aircraft_data2.csv"
 
   fieldnames = ['hex',
           'callsign',
@@ -167,9 +168,6 @@ if __name__ == "__main__":
           'ground speed',
           'degraded',
           ]
-  
-  MINUTES_TO_RUN = 120
-  MINUTES_BETWEEN_RUNS = 1
 
   # Write header only if file doesn't exist
   if not os.path.exists(output_file):
