@@ -6,6 +6,7 @@ import requests
 from geopy.distance import geodesic
 from dotenv import load_dotenv
 from mapping import TYPE_MAP
+from aircraft_tracker import check_nearby_aircraft
 
 # --- LOAD .ENV ---
 load_dotenv()
@@ -15,6 +16,7 @@ MY_LON = float(os.getenv("MY_LON"))
 
 # --- SETTINGS ---
 DISTANCE_THRESHOLD_MILES = 3000
+NEARBY_DISTANCE_THRESHOLD_MILES = 100
 TYPES_TO_SEARCH = ['C17', 'E3TF']
 
 # --- MISSING INFO DICTIONARY ---
@@ -55,7 +57,7 @@ def get_aircraft_ads_b():
 
       if lat and lon and alt != 'ground':
         # Filter to only US aircraft
-        if contains_no_substring_from_list(own_op, ['Canad', 'Israel', 'United Kingdom', 'Royal', 'Australia', 'Mexic']):
+        if contains_no_substring_from_list(own_op, ['Canad', 'Israel', 'United Kingdom', 'Royal', 'Australia', 'Mexic', 'Qatar']):
           distance = geodesic((MY_LAT, MY_LON), (float(lat), float(lon))).miles
           if distance <= DISTANCE_THRESHOLD_MILES:
             filtered_aircraft.append(plane)
@@ -76,10 +78,10 @@ def collect_data():
         unix_time = int(time.time())
         hex = str(plane.get('hex'))
         unique_key = str(unix_time) + '-' + hex
-        callsign = plane.get('flight', 'Unknown Callsign').strip().upper()
+        callsign = plane.get('flight', 'UNKNOWN CALLSIGN').strip().upper()
 
         if callsign == '0' or callsign == '00000000':
-          callsign = 'Unknown Callsign'
+          callsign = 'UNKNOWN CALLSIGN'
 
         squawk = plane.get('squawk', 'Unavailable')
         altitude = plane.get('alt_baro', 'Unavailable')
@@ -137,8 +139,11 @@ def collect_data():
 
     except Exception as e:
       print(f"Error processing aircraft: {e}")
+
+  # Print nearby aircraft (and send SMS if enabled)
+  check_nearby_aircraft(aircraft_list, NEARBY_DISTANCE_THRESHOLD_MILES)
   
-  print(aircraft_dict)
+  # print(aircraft_dict)
   return aircraft_dict
 
 
@@ -174,6 +179,7 @@ if __name__ == "__main__":
 
   for i in range(MINUTES_TO_RUN):
     try:
+
       nested_dict = collect_data()
       aircraft_data = list(nested_dict.values()) 
 

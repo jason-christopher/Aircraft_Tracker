@@ -36,6 +36,7 @@ TYPE_MAP = {
   'B52': 'B-52H Stratofortress',
   'F35': 'F-35 Lightning II',
   'BT7': 'T-7 Red Hawk',
+  'F18S': 'F/A-18 Hornet',
 }
 
 DIRECTION_MAP = [

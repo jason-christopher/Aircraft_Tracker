@@ -16,38 +16,6 @@ TWILIO_FROM = os.getenv("TWILIO_FROM")
 TWILIO_TO = os.getenv("TWILIO_TO")
 ADSB_KEY = os.getenv("ADSB_KEY")
 
-# --- SETTINGS ---
-DISTANCE_THRESHOLD_MILES = 75
-
-# --- FUNCTIONS ---
-def get_aircraft_ads_b():
-  url = "https://adsbexchange-com1.p.rapidapi.com/v2/mil"
-  headers = {
-    "x-rapidapi-key": ADSB_KEY,
-    "x-rapidapi-host": "adsbexchange-com1.p.rapidapi.com"
-  }
-  response = requests.get(url, headers=headers)
-  if response.status_code != 200:
-    return []
-
-  aircraft_list = response.json().get("ac", [])
-  filtered_aircraft = []
-
-  for plane in aircraft_list:
-    try:
-      lat = float(plane.get('lat', 0) or 0)
-      lon = float(plane.get('lon', 0) or 0)
-      own_op = plane.get('ownOp', '').strip()
-      alt = plane.get('alt_baro')
-      if lat and lon and alt != 'ground' and (own_op == '' or 'United States' in own_op):
-        distance = geodesic((MY_LAT, MY_LON), (lat, lon)).miles
-        if distance <= DISTANCE_THRESHOLD_MILES:
-          filtered_aircraft.append(plane)
-    except:
-      continue
-
-  return filtered_aircraft
-
 def get_heading_label(track):
   if track is None:
     return None
@@ -60,39 +28,46 @@ def send_sms(message):
   client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
   client.messages.create(body=message, from_=TWILIO_FROM, to=TWILIO_TO)
 
-def check_nearby_aircraft():
-  aircraft_list = get_aircraft_ads_b()
+def check_nearby_aircraft(aircraft_list, NEARBY_DISTANCE_THRESHOLD_MILES):
   messages = []
 
   for plane in aircraft_list:
     try:
-      callsign = plane.get('flight', '').strip().upper()
-      if callsign == '0' or callsign == '00000000':
-        callsign = 'Unknown Callsign'
-      if not callsign:
-        continue
+      lat = plane.get('lat', None)
+      lon = plane.get('lon', None)
 
-      squawk = int(plane['squawk']) if plane.get('squawk') else None
-      altitude = plane.get('alt_baro', 'Unavailable')
-      if isinstance(altitude, (int, float)):
-        altitude_fmt = f"{int(altitude):,} ft"
-      else:
-        altitude_fmt = str(altitude)
-
-      lat = float(plane['lat'])
-      lon = float(plane['lon'])
+      # Back-up lat/lon
+      if not lat:
+        lat = plane.get('rr_lat', None)
+      if not lon:
+        lon = plane.get('rr_lon', None)
+      
       distance = geodesic((MY_LAT, MY_LON), (lat, lon)).miles
 
-      aircraft_type = TYPE_MAP.get(plane.get('t', '').upper(), plane.get('t'))
-      heading = get_heading_label(plane.get('track'))
+      # check distance
+      if distance <= NEARBY_DISTANCE_THRESHOLD_MILES:
+        callsign = plane.get('flight', 'UNKNOWN CALLSIGN').strip().upper()
 
-      description = f"{callsign} ({aircraft_type}) detected {distance:.1f} miles away at {altitude_fmt}"
-      if heading:
-        description += f", heading {heading}"
-      messages.append(description + ".")
+        if callsign == '0' or callsign == '00000000':
+          callsign = 'UNKNOWN CALLSIGN'
 
-      if squawk in [7500, 7600, 7700]:
-        messages.append(f"'{callsign}' squawking {squawk} at {altitude_fmt}, {distance:.2f} miles away.")
+        squawk = plane.get('squawk', '')
+        altitude = plane.get('alt_baro', '')
+        if isinstance(altitude, (int, float)):
+          altitude_fmt = f"{int(altitude):,} ft"
+        else:
+          altitude_fmt = str(altitude)
+
+        aircraft_type = TYPE_MAP.get(plane.get('t', '').upper(), plane.get('t'))
+        heading = get_heading_label(plane.get('track', None))
+
+        description = f"{callsign} ({aircraft_type}) detected {distance:.1f} miles away at {altitude_fmt}"
+        if heading:
+          description += f", heading {heading}"
+        messages.append(description + ".")
+
+        if squawk in [7500, 7600, 7700]:
+          messages.append(f"'{callsign}' squawking {squawk} at {altitude_fmt}, {distance:.2f} miles away.")
 
     except Exception as e:
       print(f"Error processing aircraft: {e}")
