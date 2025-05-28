@@ -1,5 +1,4 @@
 import os
-import requests
 from geopy.distance import geodesic
 from twilio.rest import Client
 from dotenv import load_dotenv
@@ -8,13 +7,10 @@ from mapping import TYPE_MAP, DIRECTION_MAP
 # --- LOAD .ENV ---
 load_dotenv()
 
-MY_LAT = float(os.getenv("MY_LAT"))
-MY_LON = float(os.getenv("MY_LON"))
 TWILIO_SID = os.getenv("TWILIO_SID")
 TWILIO_AUTH_TOKEN = os.getenv("TWILIO_AUTH_TOKEN")
 TWILIO_FROM = os.getenv("TWILIO_FROM")
 TWILIO_TO = os.getenv("TWILIO_TO")
-ADSB_KEY = os.getenv("ADSB_KEY")
 
 def get_heading_label(track):
   if track is None:
@@ -28,7 +24,7 @@ def send_sms(message):
   client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
   client.messages.create(body=message, from_=TWILIO_FROM, to=TWILIO_TO)
 
-def check_nearby_aircraft(aircraft_list, NEARBY_DISTANCE_THRESHOLD_MILES):
+def check_nearby_aircraft(aircraft_list, MY_LAT, MY_LON, NEARBY_DISTANCE_THRESHOLD_MILES=2):
   messages = []
 
   for plane in aircraft_list:

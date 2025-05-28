@@ -16,7 +16,7 @@ MY_LON = float(os.getenv("MY_LON"))
 
 # --- SETTINGS ---
 DISTANCE_THRESHOLD_MILES = 3000
-NEARBY_DISTANCE_THRESHOLD_MILES = 100
+NEARBY_DISTANCE_THRESHOLD_MILES = 50
 TYPES_TO_SEARCH = ['C17', 'E3TF']
 
 # --- MISSING INFO DICTIONARY ---
@@ -141,7 +141,7 @@ def collect_data():
       print(f"Error processing aircraft: {e}")
 
   # Print nearby aircraft (and send SMS if enabled)
-  check_nearby_aircraft(aircraft_list, NEARBY_DISTANCE_THRESHOLD_MILES)
+  check_nearby_aircraft(aircraft_list, MY_LAT, MY_LON, NEARBY_DISTANCE_THRESHOLD_MILES)
   
   # print(aircraft_dict)
   return aircraft_dict
