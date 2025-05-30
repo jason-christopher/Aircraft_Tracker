@@ -57,7 +57,21 @@ def check_nearby_aircraft(aircraft_list, MY_LAT, MY_LON, NEARBY_DISTANCE_THRESHO
         aircraft_type = TYPE_MAP.get(plane.get('t', '').upper(), plane.get('t'))
         heading = get_heading_label(plane.get('track', None))
 
-        description = f"{callsign} ({aircraft_type}) detected {distance:.1f} miles away at {altitude_fmt}"
+        # Direction from my location
+        if lat > MY_LAT:
+          if lon > MY_LON:
+            description = f"{callsign} ({aircraft_type}) detected {distance:.1f} miles NE at {altitude_fmt}"
+          elif lon < MY_LON:
+            description = f"{callsign} ({aircraft_type}) detected {distance:.1f} miles NW at {altitude_fmt}"
+        elif lat < MY_LAT:
+          if lon > MY_LON:
+            description = f"{callsign} ({aircraft_type}) detected {distance:.1f} miles SE at {altitude_fmt}"
+          elif lon < MY_LON:
+            description = f"{callsign} ({aircraft_type}) detected {distance:.1f} miles SW at {altitude_fmt}"
+        else:
+          description = f"{callsign} ({aircraft_type}) detected {distance:.1f} miles away at {altitude_fmt}"
+
+        # Aircraft heading
         if heading:
           description += f", heading {heading}"
         messages.append(description + ".")
