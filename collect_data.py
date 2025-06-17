@@ -17,7 +17,7 @@ MY_LON = float(os.getenv("MY_LON"))
 # --- SETTINGS ---
 DISTANCE_THRESHOLD_MILES = 3000
 NEARBY_DISTANCE_THRESHOLD_MILES = 5
-TYPES_TO_SEARCH = ['C17', 'E3TF', 'B742', 'B52', 'F35', 'F18S', 'C5M', 'E6', 'R135', 'W135', 'E2', 'B752']
+TYPES_TO_SEARCH = ['C17', 'E3TF', 'B742', 'B52', 'F35', 'F18S', 'C5M', 'E6', 'R135', 'W135', 'E2', 'B752', 'B762', 'K35R']
 MINUTES_TO_RUN = 120
 MINUTES_BETWEEN_RUNS = 1
 
@@ -152,7 +152,7 @@ def collect_data():
 if __name__ == "__main__":
 
   # Output file name
-  output_file = "aircraft_data2.csv"
+  output_file = "aircraft_data3.csv"
 
   fieldnames = ['hex',
           'callsign',
