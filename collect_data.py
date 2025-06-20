@@ -14,6 +14,8 @@ load_dotenv()
 MY_LAT = float(os.getenv("MY_LAT"))
 MY_LON = float(os.getenv("MY_LON"))
 
+print(MY_LAT)
+
 # --- SETTINGS ---
 DISTANCE_THRESHOLD_MILES = 3000
 NEARBY_DISTANCE_THRESHOLD_MILES = 5
