@@ -14,13 +14,26 @@ MY_LAT = float(os.getenv("MY_LAT"))
 MY_LON = float(os.getenv("MY_LON"))
 ADSB_KEY = os.getenv("ADSB_KEY")
 
+print(MY_LAT, MY_LON)
+
 # --- SETTINGS ---
-DISTANCE_THRESHOLD_MILES = 3000
-TYPES_TO_SEARCH = ['C17', 'E3TF']
+DISTANCE_THRESHOLD_MILES = 15000
+TYPES_TO_SEARCH = ['C17', 'E3TF', 'B742', 'B52', 'F35', 'F18S', 'C5M', 'E6', 'R135', 'W135', 'E2', 'B752', 'B762', 'K35R']
+MINUTES_TO_RUN = 180
+MINUTES_BETWEEN_RUNS = 1
+
+# --- MISSING INFO DICTIONARY ---
+missing_info_dict = {}
 
 # --- FUNCTIONS ---
+def contains_no_substring_from_list(main_string, substring_list):
+  for sub in substring_list:
+    if sub.strip().lower() in main_string.strip().lower():
+      return False
+  return True
+
+
 def get_aircraft_ads_b():
-  # Call API
   url = "https://adsbexchange-com1.p.rapidapi.com/v2/mil"
   headers = {
     "x-rapidapi-key": ADSB_KEY,
@@ -29,22 +42,29 @@ def get_aircraft_ads_b():
   response = requests.get(url, headers=headers)
   if response.status_code != 200:
     return []
-  
-  # Get aircraft
+
   aircraft_list = response.json().get("ac", [])
   filtered_aircraft = []
 
-  # Filter aircraft and add to final list
   for plane in aircraft_list:
     try:
-      lat = float(plane.get('lat', 0) or 0)
-      lon = float(plane.get('lon', 0) or 0)
-      alt = plane.get('alt_baro')
+      lat = plane.get('lat', None)
+      lon = plane.get('lon', None)
+      own_op = plane.get('ownOp', '')
+      alt = plane.get('alt_baro', 'Unknown')
+
+      # Back-up lat/lon
+      if not lat:
+        lat = plane.get('rr_lat', None)
+      if not lon:
+        lon = plane.get('rr_lon', None)
+
       if lat and lon and alt != 'ground':
-        distance = geodesic((MY_LAT, MY_LON), (lat, lon)).miles
-        if distance <= DISTANCE_THRESHOLD_MILES:
-          filtered_aircraft.append(plane)
-    except:
+        if contains_no_substring_from_list(own_op, ['Canad', 'Israel', 'United Kingdom', 'Royal', 'Australia', 'Mexic', 'Qatar']):
+          distance = geodesic((MY_LAT, MY_LON), (float(lat), float(lon))).miles
+          if distance <= DISTANCE_THRESHOLD_MILES:
+            filtered_aircraft.append(plane)
+    except Exception as e:
       continue
   return filtered_aircraft
 
@@ -56,59 +76,82 @@ def collect_data():
   for plane in aircraft_list:
     try:
       if plane.get('t', '').strip().upper() in TYPES_TO_SEARCH:
+        degraded = False
         unix_time = int(time.time())
         hex = str(plane.get('hex'))
         unique_key = str(unix_time) + '-' + hex
-        callsign = plane.get('flight', 'Unknown Callsign').strip().upper()
-
-        if callsign == '0' or callsign == '00000000':
-          callsign = 'Unknown Callsign'
-
+        callsign = plane.get('flight', 'UNKNOWN CALLSIGN').strip().upper()
+        if callsign == '0' or callsign == '00000000' or callsign == '':
+          callsign = 'UNKNOWN CALLSIGN'
         squawk = plane.get('squawk', 'Unavailable')
         altitude = plane.get('alt_baro', 'Unavailable')
         if isinstance(altitude, (int, float)):
           altitude = int(altitude)
         else:
           altitude = str(altitude)
-
-        lat = float(plane['lat'])
-        lon = float(plane['lon'])
+        lat = plane.get('lat', None)
+        lon = plane.get('lon', None)
+        # Back-up lat/lon
+        if not lat:
+          lat = plane.get('rr_lat', None)
+          degraded = True
+        if not lon:
+          lon = plane.get('rr_lon', None)
+          degraded = True
         tail_number = str(plane.get('r', ''))
+        own_op = plane.get('ownOp', '')
         aircraft_type = TYPE_MAP.get(plane.get('t', '').upper(), plane.get('t'))
+        desc = plane.get('desc', '')
+        if 'VC-25' in desc:
+          aircraft_type = 'AIR FORCE ONE'
         heading = int(plane.get('track')) if isinstance(plane.get('track'), (int, float)) else None
         ground_speed = int(plane.get('gs')) if isinstance(plane.get('gs'), (int, float)) else None
 
-        # Add to dictionary
+        # Update missing info dictionary
+        if callsign != 'UNKNOWN CALLSIGN' and squawk != 'Unavailable':
+          missing_info_dict[hex] = {
+            'callsign': callsign,
+            'squawk': squawk,
+          }
+
+        # Fill in from memory if currently missing
+        if hex in missing_info_dict:
+          if callsign == 'UNKNOWN CALLSIGN':
+            callsign = missing_info_dict[hex]['callsign']
+          if squawk == 'Unavailable':
+            squawk = missing_info_dict[hex]['squawk']
+
         aircraft_dict[unique_key] = {
           'hex': hex,
           'callsign': callsign,
           'datetime': str(datetime.now()),
+          'operator': own_op,
           'tail number': tail_number,
           'squawk': squawk,
           'altitude': altitude,
-          'latitude': lat,
-          'longitude': lon,
+          'latitude': float(lat) if lat else 'UNKNOWN LAT',
+          'longitude': float(lon) if lon else 'UNKNOWN LON',
           'type': aircraft_type,
           'heading': heading,
           'ground speed': ground_speed,
+          'degraded': degraded,
         }
 
     except Exception as e:
       print(f"Error processing aircraft: {e}")
-  
-  print(aircraft_dict)
+
   return aircraft_dict
 
 
 # --- MAIN LOOP ---
 if __name__ == "__main__":
 
-  # Output file name
   output_file = "aircraft_data_my_api.csv"
 
   fieldnames = ['hex',
           'callsign',
           'datetime',
+          'operator',
           'tail number',
           'squawk',
           'altitude',
@@ -117,12 +160,9 @@ if __name__ == "__main__":
           'type',
           'heading',
           'ground speed',
+          'degraded',
           ]
-  
-  MINUTES_TO_RUN = 180
-  MINUTES_BETWEEN_RUNS = 1
 
-  # Write header only if file doesn't exist
   if not os.path.exists(output_file):
     with open(output_file, 'w', newline='') as f:
       writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -131,7 +171,7 @@ if __name__ == "__main__":
   for i in range(MINUTES_TO_RUN):
     try:
       nested_dict = collect_data()
-      aircraft_data = list(nested_dict.values()) 
+      aircraft_data = list(nested_dict.values())
 
       with open(output_file, 'a', newline='') as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
@@ -143,4 +183,4 @@ if __name__ == "__main__":
       with open("error_log.txt", 'a') as err:
         err.write(f"[{datetime.now()}] Error: {str(e)}\n")
 
-    time.sleep(MINUTES_BETWEEN_RUNS*60)
+    time.sleep(MINUTES_BETWEEN_RUNS * 60)

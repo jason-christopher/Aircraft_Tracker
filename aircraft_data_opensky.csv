@@ -1,0 +1,7 @@
+hex,callsign,datetime,operator,tail number,squawk,altitude,latitude,longitude,type,heading,ground speed,degraded
+ae29fc,ATILA05,2026-05-25 21:49:22.158472,United States,,7671,11525,59.2032,17.4144,,211,183,False
+ae5f9a,UNKNOWN CALLSIGN,2026-05-25 21:49:22.158494,United States,,0245,24825,27.1658,50.3948,,130,425,False
+ae03e9,CNV3115,2026-05-25 21:49:22.158501,United States,,1410,26100,40.5818,6.731,,123,278,False
+ae29fc,ATILA05,2026-05-25 21:50:24.474313,United States,,7671,13475,59.1593,17.362,,211,170,False
+ae5f9a,UNKNOWN CALLSIGN,2026-05-25 21:50:24.474331,United States,,0245,24850,27.0842,50.5007,,130,429,False
+ae03e9,CNV3115,2026-05-25 21:50:24.474336,United States,,1410,26075,40.537,6.8193,,123,279,False

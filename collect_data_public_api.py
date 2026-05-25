@@ -14,7 +14,7 @@ load_dotenv()
 MY_LAT = float(os.getenv("MY_LAT"))
 MY_LON = float(os.getenv("MY_LON"))
 
-print(MY_LAT)
+print(MY_LAT, MY_LON)
 
 # --- SETTINGS ---
 DISTANCE_THRESHOLD_MILES = 3000
@@ -39,6 +39,7 @@ def get_aircraft_ads_b():
   url = "https://api.adsb.one/v2/mil"
   response = requests.get(url)
   if response.status_code != 200:
+    print('*** API Error ***')
     return []
   
   # Get aircraft
@@ -154,7 +155,7 @@ def collect_data():
 if __name__ == "__main__":
 
   # Output file name
-  output_file = "aircraft_data3.csv"
+  output_file = "aircraft_data4.csv"
 
   fieldnames = ['hex',
           'callsign',
