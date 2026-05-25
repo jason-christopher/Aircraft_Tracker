@@ -2,3 +2,5 @@
 [2025-05-27 17:33:09.200426] Error: HTTPSConnectionPool(host='api.adsb.one', port=443): Read timed out. (read timeout=None)
 [2025-05-27 17:34:29.209407] Error: HTTPSConnectionPool(host='api.adsb.one', port=443): Read timed out. (read timeout=None)
 [2025-05-27 17:35:47.584573] Error: HTTPSConnectionPool(host='api.adsb.one', port=443): Read timed out. (read timeout=None)
+[2026-05-25 23:22:42.164643] Error: cannot access local variable 'unknown_callsign_hexes' where it is not associated with a value
+[2026-05-25 23:24:55.155657] Error: cannot access local variable 'unknown_callsign_hexes' where it is not associated with a value

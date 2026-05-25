@@ -1,7 +1,11 @@
 import os
+import sys
 from geopy.distance import geodesic
 from twilio.rest import Client
 from dotenv import load_dotenv
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, BASE_DIR)
 from mapping import TYPE_MAP, DIRECTION_MAP
 
 # --- LOAD .ENV ---

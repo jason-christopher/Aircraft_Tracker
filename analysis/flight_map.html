@@ -1,0 +1,3480 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_97d85236ca58c0cf39b4cfc5f72544fd {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_97d85236ca58c0cf39b4cfc5f72544fd" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_97d85236ca58c0cf39b4cfc5f72544fd = L.map(
+                "map_97d85236ca58c0cf39b4cfc5f72544fd",
+                {
+                    center: [36.80624421148036, -37.65507710574018],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_6e03f441710fb2da579f5216f11d8fe6 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6e03f441710fb2da579f5216f11d8fe6.addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            var feature_group_50e7639e4a91b268ea8a003175f17158 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_47b59fd8a6c7104a079f1cf92fc274ec = L.circleMarker(
+                [34.6664, -99.3014],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_47b59fd8a6c7104a079f1cf92fc274ec.bindTooltip(
+                `<div>
+                     Altus AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_118ad5b11b9b0c2d33bf356f542c91c5 = L.circleMarker(
+                [35.3925, -86.0858],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_118ad5b11b9b0c2d33bf356f542c91c5.bindTooltip(
+                `<div>
+                     Arnold AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f8474a839afd6201e3a3db530d6b0caf = L.circleMarker(
+                [32.502, -93.663],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_f8474a839afd6201e3a3db530d6b0caf.bindTooltip(
+                `<div>
+                     Barksdale AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b1def795a6c34f08d166cb3dfacb58d8 = L.circleMarker(
+                [44.8088, -68.8001],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_b1def795a6c34f08d166cb3dfacb58d8.bindTooltip(
+                `<div>
+                     Bangor ANGB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_95cce44086ce103279c7898de59eba05 = L.circleMarker(
+                [39.135, -121.438],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_95cce44086ce103279c7898de59eba05.bindTooltip(
+                `<div>
+                     Beale AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b01dbf59e10ab08943dca7f6824498a8 = L.circleMarker(
+                [31.8612, -106.3692],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_b01dbf59e10ab08943dca7f6824498a8.bindTooltip(
+                `<div>
+                     Biggs AAF
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af74bf63f562eebb469fa72773702bdc = L.circleMarker(
+                [34.385, -103.324],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_af74bf63f562eebb469fa72773702bdc.bindTooltip(
+                `<div>
+                     Cannon AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b24aa72421ae014b72f439fb558ae110 = L.circleMarker(
+                [33.649, -88.441],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_b24aa72421ae014b72f439fb558ae110.bindTooltip(
+                `<div>
+                     Columbus AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_965d90f7b6d58842c319c361fa34d565 = L.circleMarker(
+                [32.167, -110.887],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_965d90f7b6d58842c319c361fa34d565.bindTooltip(
+                `<div>
+                     Davis-Monthan AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d06cfbf260e4346d22d2f33c9362b15f = L.circleMarker(
+                [39.124, -75.46],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_d06cfbf260e4346d22d2f33c9362b15f.bindTooltip(
+                `<div>
+                     Dover AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_49c35461c6ed7e3c3952189a33570c8b = L.circleMarker(
+                [32.448, -99.852],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_49c35461c6ed7e3c3952189a33570c8b.bindTooltip(
+                `<div>
+                     Dyess AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_58ba6df7cf0514497ff2db0efe5b2ff4 = L.circleMarker(
+                [34.903, -117.882],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_58ba6df7cf0514497ff2db0efe5b2ff4.bindTooltip(
+                `<div>
+                     Edwards AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e6d1f83a9b4b364c7f1db3842ee223a9 = L.circleMarker(
+                [30.482, -86.524],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_e6d1f83a9b4b364c7f1db3842ee223a9.bindTooltip(
+                `<div>
+                     Eglin AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8b043f108245519f875c47730eebce65 = L.circleMarker(
+                [44.15, -103.111],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_8b043f108245519f875c47730eebce65.bindTooltip(
+                `<div>
+                     Ellsworth AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c00075ae94e380388c160e0b3d414924 = L.circleMarker(
+                [47.618, -117.659],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_c00075ae94e380388c160e0b3d414924.bindTooltip(
+                `<div>
+                     Fairchild AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d45adab4d2cf9f36d0e3989a5de9f18f = L.circleMarker(
+                [41.134, -104.85],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_d45adab4d2cf9f36d0e3989a5de9f18f.bindTooltip(
+                `<div>
+                     F.E. Warren AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70648316c092cfc540f7357e666f8c7b = L.circleMarker(
+                [37.151, -76.591],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_70648316c092cfc540f7357e666f8c7b.bindTooltip(
+                `<div>
+                     Felker AAF
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f4a85fc9ec0ce701c775514b1bb0d177 = L.circleMarker(
+                [36.671, -87.491],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_f4a85fc9ec0ce701c775514b1bb0d177.bindTooltip(
+                `<div>
+                     Fort Campbell AAF
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5b5f50b2020d42474ae0d2210a119962 = L.circleMarker(
+                [31.543, -110.362],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_5b5f50b2020d42474ae0d2210a119962.bindTooltip(
+                `<div>
+                     Fort Huachuca AAF
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3bf78c51e2a5e9689df00015025105a9 = L.circleMarker(
+                [31.332, -85.719],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_3bf78c51e2a5e9689df00015025105a9.bindTooltip(
+                `<div>
+                     Fort Novosel AAF
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_64d961a41a0ee2b229cd23f5626b8536 = L.circleMarker(
+                [39.066, -96.84],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_64d961a41a0ee2b229cd23f5626b8536.bindTooltip(
+                `<div>
+                     Fort Riley AAF
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f26885a85e8f70996ccd93f4f2d59a6 = L.circleMarker(
+                [31.409, -100.419],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_1f26885a85e8f70996ccd93f4f2d59a6.bindTooltip(
+                `<div>
+                     Goodfellow AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_51a1fe63e6c0efdacbc142603d0a4d13 = L.circleMarker(
+                [47.954, -97.391],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_51a1fe63e6c0efdacbc142603d0a4d13.bindTooltip(
+                `<div>
+                     Grand Forks AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5867f66e346b5cb75951f6466f3096df = L.circleMarker(
+                [43.91, -90.54],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_5867f66e346b5cb75951f6466f3096df.bindTooltip(
+                `<div>
+                     Hardy-Steen AAF
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_213aed02eef1091c7208092f2eacafa9 = L.circleMarker(
+                [41.109, -111.979],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_213aed02eef1091c7208092f2eacafa9.bindTooltip(
+                `<div>
+                     Hill AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71b26d08207404be245fbc445119ae32 = L.circleMarker(
+                [32.855, -106.109],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_71b26d08207404be245fbc445119ae32.bindTooltip(
+                `<div>
+                     Holloman AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a9e8197e2910885ef71db58a48aaa7e5 = L.circleMarker(
+                [31.139, -97.778],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_a9e8197e2910885ef71db58a48aaa7e5.bindTooltip(
+                `<div>
+                     Hood AAF
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f619d7c2fbdb48a7220a75bc5b8796fe = L.circleMarker(
+                [32.015, -81.144],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_f619d7c2fbdb48a7220a75bc5b8796fe.bindTooltip(
+                `<div>
+                     Hunter AAF
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f09a4ec175bfc221f386f365f716a497 = L.circleMarker(
+                [30.42, -86.687],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_f09a4ec175bfc221f386f365f716a497.bindTooltip(
+                `<div>
+                     Hurlburt Field
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c12a3fc507632fb3d50a02ef86880920 = L.circleMarker(
+                [38.8008, -76.8705],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_c12a3fc507632fb3d50a02ef86880920.bindTooltip(
+                `<div>
+                     JB Andrews
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_150a70352c29a8bfb98e62394514e639 = L.circleMarker(
+                [32.899, -80.04],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_150a70352c29a8bfb98e62394514e639.bindTooltip(
+                `<div>
+                     JB Charleston
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70237b0cd7cd70df2b83b181bc1939d7 = L.circleMarker(
+                [37.07, -76.36],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_70237b0cd7cd70df2b83b181bc1939d7.bindTooltip(
+                `<div>
+                     JB Langley-Eustis
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ccf4b15cfecb5cc261fcd22efebbe2b = L.circleMarker(
+                [47.085, -122.505],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_4ccf4b15cfecb5cc261fcd22efebbe2b.bindTooltip(
+                `<div>
+                     JB Lewis-McChord
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_77a1e3fd83a8ec3fa09507b6b22b9c1e = L.circleMarker(
+                [40.046, -74.577],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_77a1e3fd83a8ec3fa09507b6b22b9c1e.bindTooltip(
+                `<div>
+                     JB McGuire-Dix-Lakehurst
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b326a450f394d27ba606e8e69f23a54 = L.circleMarker(
+                [29.529, -98.277],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_3b326a450f394d27ba606e8e69f23a54.bindTooltip(
+                `<div>
+                     JB San Antonio - Randolph
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_234512141543b695e0eec59949b63580 = L.circleMarker(
+                [30.407, -88.922],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_234512141543b695e0eec59949b63580.bindTooltip(
+                `<div>
+                     Keesler AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ccf3ff8f256dd39ac1afa0ace3b884d9 = L.circleMarker(
+                [35.038, -106.54],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_ccf3ff8f256dd39ac1afa0ace3b884d9.bindTooltip(
+                `<div>
+                     Kirtland AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb15f9bc0229b2d3fb5f50f7997a19cb = L.circleMarker(
+                [29.358, -100.778],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_bb15f9bc0229b2d3fb5f50f7997a19cb.bindTooltip(
+                `<div>
+                     Laughlin AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c8f0af0e73e7f21a728daf00aeaf38d = L.circleMarker(
+                [34.92, -92.158],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_7c8f0af0e73e7f21a728daf00aeaf38d.bindTooltip(
+                `<div>
+                     Little Rock AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4d189b4ac50c657b75fbdb12f69d9d76 = L.circleMarker(
+                [33.535, -112.383],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_4d189b4ac50c657b75fbdb12f69d9d76.bindTooltip(
+                `<div>
+                     Luke AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ebbe817308b201476d31f6b7686a758 = L.circleMarker(
+                [27.848, -82.525],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_3ebbe817308b201476d31f6b7686a758.bindTooltip(
+                `<div>
+                     MacDill AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4f9ad0cee2a16c9c5fbb7ef197e42ad5 = L.circleMarker(
+                [47.509, -111.189],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_4f9ad0cee2a16c9c5fbb7ef197e42ad5.bindTooltip(
+                `<div>
+                     Malmstrom AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_870f06be3f49aead292a11165f006153 = L.circleMarker(
+                [32.483, -80.729],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_870f06be3f49aead292a11165f006153.bindTooltip(
+                `<div>
+                     MCAS Beaufort
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_07a8abdcb8a26d176b515828a6b8064f = L.circleMarker(
+                [33.307, -117.492],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_07a8abdcb8a26d176b515828a6b8064f.bindTooltip(
+                `<div>
+                     MCAS Camp Pendleton
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d144fbf0a393ee66c627e446678e2377 = L.circleMarker(
+                [34.9222, -76.8927],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_d144fbf0a393ee66c627e446678e2377.bindTooltip(
+                `<div>
+                     MCAS Cherry Point
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_be744619e3d46f16203117f40fc163fa = L.circleMarker(
+                [34.73, -77.433],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_be744619e3d46f16203117f40fc163fa.bindTooltip(
+                `<div>
+                     MCAS New River
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6327de44783f49b178106bc8308d9a83 = L.circleMarker(
+                [34.288, -116.147],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_6327de44783f49b178106bc8308d9a83.bindTooltip(
+                `<div>
+                     MCAGCC Twentynine Palms
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3da25a82de1b1071376d34948907638e = L.circleMarker(
+                [32.378, -86.362],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_3da25a82de1b1071376d34948907638e.bindTooltip(
+                `<div>
+                     Maxwell AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fa4b611ed94e214b3d2c591bfa9ef482 = L.circleMarker(
+                [37.618, -97.266],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_fa4b611ed94e214b3d2c591bfa9ef482.bindTooltip(
+                `<div>
+                     McConnell AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eca219a91bf3c4398716f9db5a51dff0 = L.circleMarker(
+                [48.415, -101.35],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_eca219a91bf3c4398716f9db5a51dff0.bindTooltip(
+                `<div>
+                     Minot AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c76444fd4ecb25abd67337119209fc76 = L.circleMarker(
+                [30.963, -83.208],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_c76444fd4ecb25abd67337119209fc76.bindTooltip(
+                `<div>
+                     Moody AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_79fc4719eea420eaab5ee54f057fdfb2 = L.circleMarker(
+                [43.045, -115.867],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_79fc4719eea420eaab5ee54f057fdfb2.bindTooltip(
+                `<div>
+                     Mountain Home AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9d9b0a2636ca9aed2c7d81b3eee1f547 = L.circleMarker(
+                [32.825, -115.679],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_9d9b0a2636ca9aed2c7d81b3eee1f547.bindTooltip(
+                `<div>
+                     NAF El Centro
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bf2401c10ad1216af171f6f99538f8d1 = L.circleMarker(
+                [27.68, -97.291],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_bf2401c10ad1216af171f6f99538f8d1.bindTooltip(
+                `<div>
+                     NAS Corpus Christi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_93e0da52bc4986a90b09fbb8a50f8fcf = L.circleMarker(
+                [39.426, -118.705],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_93e0da52bc4986a90b09fbb8a50f8fcf.bindTooltip(
+                `<div>
+                     NAS Fallon
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1ffaab5bed39c084d9ad7dbbdadecccc = L.circleMarker(
+                [30.231, -81.688],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_1ffaab5bed39c084d9ad7dbbdadecccc.bindTooltip(
+                `<div>
+                     NAS Jacksonville
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ae616a442ed533322cd13c9c8e8f6b5f = L.circleMarker(
+                [32.784, -97.461],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_ae616a442ed533322cd13c9c8e8f6b5f.bindTooltip(
+                `<div>
+                     NAS JRB Fort Worth
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1d56ca8be303fe5fa8e330f3a21942a8 = L.circleMarker(
+                [24.576, -81.701],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_1d56ca8be303fe5fa8e330f3a21942a8.bindTooltip(
+                `<div>
+                     NAS Key West
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a7d6251daf4045e89bd98fd7cde118be = L.circleMarker(
+                [27.502, -97.802],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_a7d6251daf4045e89bd98fd7cde118be.bindTooltip(
+                `<div>
+                     NAS Kingsville
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cefb423a77bbffa2ec6be4ba21f5a130 = L.circleMarker(
+                [36.3361, -119.9575],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_cefb423a77bbffa2ec6be4ba21f5a130.bindTooltip(
+                `<div>
+                     NAS Lemoore
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0696c6fe0a584b51f5a82671103f01c1 = L.circleMarker(
+                [32.551, -88.85],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_0696c6fe0a584b51f5a82671103f01c1.bindTooltip(
+                `<div>
+                     NAS Meridian
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_72a69daaf4104e6fefddb2c76468be5b = L.circleMarker(
+                [32.699, -117.182],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_72a69daaf4104e6fefddb2c76468be5b.bindTooltip(
+                `<div>
+                     NAS North Island
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee88a668e2791ae1d656fc5684a69e86 = L.circleMarker(
+                [36.817, -76.027],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_ee88a668e2791ae1d656fc5684a69e86.bindTooltip(
+                `<div>
+                     NAS Oceana
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3e122ebff3ca3c5340674e9e4ac33bda = L.circleMarker(
+                [38.283, -76.417],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_3e122ebff3ca3c5340674e9e4ac33bda.bindTooltip(
+                `<div>
+                     NAS Patuxent River
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23f1ea49dfa601b3500c31a5e3a37a16 = L.circleMarker(
+                [30.344, -87.311],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_23f1ea49dfa601b3500c31a5e3a37a16.bindTooltip(
+                `<div>
+                     NAS Pensacola
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_939d1a37ad3d70a5fcaa9c5759770bf9 = L.circleMarker(
+                [48.337, -122.65],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_939d1a37ad3d70a5fcaa9c5759770bf9.bindTooltip(
+                `<div>
+                     NAS Whidbey Island
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d006b599f332ac6cea052054bc799cca = L.circleMarker(
+                [30.732, -87.022],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_d006b599f332ac6cea052054bc799cca.bindTooltip(
+                `<div>
+                     NAS Whiting Field
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a263f87b4cadc8c8b3ce3a4adaa7023a = L.circleMarker(
+                [35.66, -117.688],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_a263f87b4cadc8c8b3ce3a4adaa7023a.bindTooltip(
+                `<div>
+                     NAWS China Lake
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cd4fa2e54c87f7642fa105827306c44c = L.circleMarker(
+                [34.116, -119.117],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_cd4fa2e54c87f7642fa105827306c44c.bindTooltip(
+                `<div>
+                     Naval Base Ventura County
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b16a068c83854ee0d5bec561ad7a0398 = L.circleMarker(
+                [36.236, -115.034],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_b16a068c83854ee0d5bec561ad7a0398.bindTooltip(
+                `<div>
+                     Nellis AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_57ad876799088a759a8831e6623887f8 = L.circleMarker(
+                [41.119, -95.918],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_57ad876799088a759a8831e6623887f8.bindTooltip(
+                `<div>
+                     Offutt AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_14265aa1521c02ccb55da96a736b9e72 = L.circleMarker(
+                [41.663, -70.528],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_14265aa1521c02ccb55da96a736b9e72.bindTooltip(
+                `<div>
+                     Otis ANGB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e6f499538ee4b798b61d01cc9590f284 = L.circleMarker(
+                [28.232, -80.64],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_e6f499538ee4b798b61d01cc9590f284.bindTooltip(
+                `<div>
+                     Patrick Space Force Base
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_caae74bf15d9475de5b37d5ffd68130d = L.circleMarker(
+                [43.076, -70.82],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_caae74bf15d9475de5b37d5ffd68130d.bindTooltip(
+                `<div>
+                     Pease ANGB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1076b04156e2dfa6154883daca0ed220 = L.circleMarker(
+                [38.805, -104.7],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_1076b04156e2dfa6154883daca0ed220.bindTooltip(
+                `<div>
+                     Peterson Space Force Base
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0d50c24bf6979e7e5b2319f32c7b4006 = L.circleMarker(
+                [35.185, -78.966],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_0d50c24bf6979e7e5b2319f32c7b4006.bindTooltip(
+                `<div>
+                     Pope Field
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a6897074f1cf6f10e78a0fc920c82438 = L.circleMarker(
+                [32.628, -83.593],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_a6897074f1cf6f10e78a0fc920c82438.bindTooltip(
+                `<div>
+                     Robins AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd19e1600041699a7d231fa75a582b2e = L.circleMarker(
+                [38.544, -89.981],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_dd19e1600041699a7d231fa75a582b2e.bindTooltip(
+                `<div>
+                     Scott AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5dd316eb190090b46f46fb8b6fa626a3 = L.circleMarker(
+                [42.628, -82.803],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_5dd316eb190090b46f46fb8b6fa626a3.bindTooltip(
+                `<div>
+                     Selfridge ANGB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_44cc011c50722fc146d9579ba7c3a437 = L.circleMarker(
+                [35.632, -77.962],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_44cc011c50722fc146d9579ba7c3a437.bindTooltip(
+                `<div>
+                     Seymour Johnson AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e3518290451b9bf62276030b3c84ef72 = L.circleMarker(
+                [33.972, -80.472],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_e3518290451b9bf62276030b3c84ef72.bindTooltip(
+                `<div>
+                     Shaw AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b69c5c1aa70514546185d7f0bdf00ec9 = L.circleMarker(
+                [34.077, -98.513],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_b69c5c1aa70514546185d7f0bdf00ec9.bindTooltip(
+                `<div>
+                     Sheppard AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0b8ba7eebeb6ccfa9b547ed170715e44 = L.circleMarker(
+                [35.138, -79.098],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_0b8ba7eebeb6ccfa9b547ed170715e44.bindTooltip(
+                `<div>
+                     Simmons AAF
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8fc3ff4001deda2e482fddc304a244b5 = L.circleMarker(
+                [35.4244, -97.3875],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_8fc3ff4001deda2e482fddc304a244b5.bindTooltip(
+                `<div>
+                     Tinker AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a6315b92c5415222dadfb5554221599e = L.circleMarker(
+                [38.2721, -121.9387],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_a6315b92c5415222dadfb5554221599e.bindTooltip(
+                `<div>
+                     Travis AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9259477531aee5b50f1880aea5872b97 = L.circleMarker(
+                [30.076, -85.574],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_9259477531aee5b50f1880aea5872b97.bindTooltip(
+                `<div>
+                     Tyndall AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_205069c17ff2370494747cd188cb8c36 = L.circleMarker(
+                [36.326, -97.915],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_205069c17ff2370494747cd188cb8c36.bindTooltip(
+                `<div>
+                     Vance AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_42c607bae626353946471adc2b981067 = L.circleMarker(
+                [38.724, -93.553],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_42c607bae626353946471adc2b981067.bindTooltip(
+                `<div>
+                     Whiteman AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_480bd387aad78dbc4029f6af6caeaa36 = L.circleMarker(
+                [44.05, -75.717],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_480bd387aad78dbc4029f6af6caeaa36.bindTooltip(
+                `<div>
+                     Wheeler-Sack AAF
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3fe9b1a33612ab9567a9a4cd4efeff4c = L.circleMarker(
+                [39.819, -84.067],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_3fe9b1a33612ab9567a9a4cd4efeff4c.bindTooltip(
+                `<div>
+                     Wright-Patterson AFB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bd48ec382fcdb692b11edc3e09e3712a = L.circleMarker(
+                [32.89, -114.15],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_bd48ec382fcdb692b11edc3e09e3712a.bindTooltip(
+                `<div>
+                     Yuma Proving Ground AAF
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a42681de2c554cc77bc1560a9da542b9 = L.circleMarker(
+                [46.155, -123.865],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_a42681de2c554cc77bc1560a9da542b9.bindTooltip(
+                `<div>
+                     CGAS Astoria
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eda74a7ac89664ce1d00ee7ea5e2a06c = L.circleMarker(
+                [41.6591, -70.5228],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_eda74a7ac89664ce1d00ee7ea5e2a06c.bindTooltip(
+                `<div>
+                     CGAS Cape Cod
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e3c43406fd83ef5b287ae601779f1b2d = L.circleMarker(
+                [27.771, -97.4],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_e3c43406fd83ef5b287ae601779f1b2d.bindTooltip(
+                `<div>
+                     CGAS Corpus Christi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_39121171a3fe8617ee1fca302747a605 = L.circleMarker(
+                [42.628, -82.803],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_39121171a3fe8617ee1fca302747a605.bindTooltip(
+                `<div>
+                     CGAS Detroit
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f6e8739be8b873a2ae89956e8cb7813b = L.circleMarker(
+                [36.262, -76.222],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_f6e8739be8b873a2ae89956e8cb7813b.bindTooltip(
+                `<div>
+                     CGAS Elizabeth City
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9c45c71f1bcb40963fc434f62c0d7542 = L.circleMarker(
+                [29.658, -95.275],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_9c45c71f1bcb40963fc434f62c0d7542.bindTooltip(
+                `<div>
+                     CGAS Houston
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8aaa3c22c8b05124aa204a997848f2d4 = L.circleMarker(
+                [40.97, -124.1],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_8aaa3c22c8b05124aa204a997848f2d4.bindTooltip(
+                `<div>
+                     CGAS Humboldt Bay
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8e72f4c162b7db6361ca677a9842afa3 = L.circleMarker(
+                [43.415, -124.238],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_8e72f4c162b7db6361ca677a9842afa3.bindTooltip(
+                `<div>
+                     CGAS North Bend
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b346cb7107553945967fb7795210d773 = L.circleMarker(
+                [48.125, -123.518],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_b346cb7107553945967fb7795210d773.bindTooltip(
+                `<div>
+                     CGAS Port Angeles
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c03cb71bdb33be61745c93385d4b8227 = L.circleMarker(
+                [38.563, -121.502],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_c03cb71bdb33be61745c93385d4b8227.bindTooltip(
+                `<div>
+                     CGAS Sacramento
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9f9cc0a12017b12bcd600201b2c91b5b = L.circleMarker(
+                [37.618, -122.375],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_9f9cc0a12017b12bcd600201b2c91b5b.bindTooltip(
+                `<div>
+                     CGAS San Francisco
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb2ee23dd11c3c3eec11fc69bb9d8179 = L.circleMarker(
+                [44.743, -85.584],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_cb2ee23dd11c3c3eec11fc69bb9d8179.bindTooltip(
+                `<div>
+                     CGAS Traverse City
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_84ee05b67caac43b6a2c82f06f46a118 = L.circleMarker(
+                [41.503, -74.095],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_84ee05b67caac43b6a2c82f06f46a118.bindTooltip(
+                `<div>
+                     Stewart ANGB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_72c972ae0754c75e03393b59a899cf95 = L.circleMarker(
+                [40.4929, -80.2373],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_72c972ae0754c75e03393b59a899cf95.bindTooltip(
+                `<div>
+                     Pittsburgh International (PA ANGB)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c595462ddfaefe6d8eae37bd60f8e7ab = L.circleMarker(
+                [29.6019, -95.1639],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_c595462ddfaefe6d8eae37bd60f8e7ab.bindTooltip(
+                `<div>
+                     Ellington Field JRB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_62fc251d4a8abedf7ebbfe524f2d5263 = L.circleMarker(
+                [42.1971, -72.5302],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_62fc251d4a8abedf7ebbfe524f2d5263.bindTooltip(
+                `<div>
+                     Westover ARB
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_08c75b55754c2bc1a4615bb21ccbe417 = L.circleMarker(
+                [39.4585, -74.5773],
+                {"bubblingMouseEvents": true, "color": "#888888", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#888888", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 3}
+            ).addTo(feature_group_50e7639e4a91b268ea8a003175f17158);
+        
+    
+            circle_marker_08c75b55754c2bc1a4615bb21ccbe417.bindTooltip(
+                `<div>
+                     Atlantic City International (NJ ANG)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d25c35883d1ec1ff127b3aa444d7543a = L.polyline(
+                [[36.708389, 27.8825], [36.820866, 27.819078], [36.93306, 27.755848], [37.043518, 27.69367], [37.148964, 27.634138], [37.253986, 27.574728], [37.354614, 27.517714], [37.45253, 27.461964], [37.539413, 27.414278], [37.620209, 27.384592], [37.643814, 27.37578], [37.834263, 27.304369], [37.893986, 27.281382], [37.953552, 27.259125]],
+                {"bubblingMouseEvents": true, "color": "cyan", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "cyan", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_d25c35883d1ec1ff127b3aa444d7543a.bindTooltip(
+                `<div>
+                     LHOB270 | C-17A Globemaster | 4,925 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f4e15b0fee946e5e20cb137820616c3b = L.circleMarker(
+                [36.708389, 27.8825],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_60e6b5b4474bcec6a4ec7bfd74d08ebc = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_434610246069d083958b0f7bafb4d3b3 = $(`<div id="html_434610246069d083958b0f7bafb4d3b3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">LHOB270</b><br><br>         <b>Type:</b> C-17A Globemaster<br>         <b>Tail #:</b> A7-MAB<br>         <b>Hex:</b> 06a249<br>         <b>Squawk:</b> 2056<br>         <b>Altitude:</b> 4,925 – 24,000 ft<br>         <b>Speed:</b> 218 – 448 kts<br>         <b>Source:</b> adsb_icao<br>         <b>Fixes:</b> 14<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:43:06     </div>     </div>`)[0];
+                popup_60e6b5b4474bcec6a4ec7bfd74d08ebc.setContent(html_434610246069d083958b0f7bafb4d3b3);
+            
+        
+
+        circle_marker_f4e15b0fee946e5e20cb137820616c3b.bindPopup(popup_60e6b5b4474bcec6a4ec7bfd74d08ebc)
+        ;
+
+        
+    
+    
+            circle_marker_f4e15b0fee946e5e20cb137820616c3b.bindTooltip(
+                `<div>
+                     LHOB270 | C-17A Globemaster | 24,000 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aaa0eb0b52f872615249463afd305d04 = L.circleMarker(
+                [37.953552, 27.259125],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_aaa0eb0b52f872615249463afd305d04.bindTooltip(
+                `<div>
+                     LHOB270 | C-17A Globemaster | 4,925 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d4db739c228aef65df6ca566d969daeb = L.polyline(
+                [[24.484039, -18.760477], [24.619217, -18.783875], [24.736084, -18.804117], [25.226984, -18.899904]],
+                {"bubblingMouseEvents": true, "color": "lime", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lime", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_d4db739c228aef65df6ca566d969daeb.bindTooltip(
+                `<div>
+                     RRR6115 | C-17A Globemaster | 33,000 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_814c417a1be5cb0bebdd5a9d827e3e90 = L.circleMarker(
+                [24.484039, -18.760477],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_cebf5804a11cfd1eff817c913717ad44 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_e902f56cb45e21ac1df0037023192d40 = $(`<div id="html_e902f56cb45e21ac1df0037023192d40" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">RRR6115</b><br><br>         <b>Type:</b> C-17A Globemaster<br>         <b>Tail #:</b> ZZ176<br>         <b>Hex:</b> 43c1c6<br>         <b>Squawk:</b> 6221<br>         <b>Altitude:</b> 33,000 – 33,000 ft<br>         <b>Speed:</b> 449 – 452 kts<br>         <b>Source:</b> adsb_icao<br>         <b>Fixes:</b> 4<br>         <b>First:</b> 2026-05-25 23:46:10<br>         <b>Last:</b> 2026-05-25 23:52:18     </div>     </div>`)[0];
+                popup_cebf5804a11cfd1eff817c913717ad44.setContent(html_e902f56cb45e21ac1df0037023192d40);
+            
+        
+
+        circle_marker_814c417a1be5cb0bebdd5a9d827e3e90.bindPopup(popup_cebf5804a11cfd1eff817c913717ad44)
+        ;
+
+        
+    
+    
+            circle_marker_814c417a1be5cb0bebdd5a9d827e3e90.bindTooltip(
+                `<div>
+                     RRR6115 | C-17A Globemaster | 33,000 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aaace864e38888bfe20347c4c8807170 = L.circleMarker(
+                [25.226984, -18.899904],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_aaace864e38888bfe20347c4c8807170.bindTooltip(
+                `<div>
+                     RRR6115 | C-17A Globemaster | 33,000 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_8ef84fd346c3bf38ae6e0f38d9897562 = L.polyline(
+                [[38.635712, -76.869965], [38.680298, -76.870087], [38.722103, -76.870361], [38.764885, -76.870483], [38.796356, -76.870605]],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_8ef84fd346c3bf38ae6e0f38d9897562.bindTooltip(
+                `<div>
+                     VCTRY01 | E-4B Nightwatch | 200 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ba8771b7239d338635a40f59996277d6 = L.circleMarker(
+                [38.635712, -76.869965],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_3f49f8d38d5e01b00a49d3adc02d28dc = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3e744633633969a41c5c9541cdc0250e = $(`<div id="html_3e744633633969a41c5c9541cdc0250e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">VCTRY01</b><br><br>         <b>Type:</b> E-4B Nightwatch<br>         <b>Tail #:</b> 73-1676<br>         <b>Hex:</b> adfeb3<br>         <b>Squawk:</b> 1623<br>         <b>Altitude:</b> 200 – 2,925 ft<br>         <b>Speed:</b> 144 – 161 kts<br>         <b>Source:</b> adsb_icao<br>         <b>Fixes:</b> 5<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:32:51     </div>     </div>`)[0];
+                popup_3f49f8d38d5e01b00a49d3adc02d28dc.setContent(html_3e744633633969a41c5c9541cdc0250e);
+            
+        
+
+        circle_marker_ba8771b7239d338635a40f59996277d6.bindPopup(popup_3f49f8d38d5e01b00a49d3adc02d28dc)
+        ;
+
+        
+    
+    
+            circle_marker_ba8771b7239d338635a40f59996277d6.bindTooltip(
+                `<div>
+                     VCTRY01 | E-4B Nightwatch | 2,925 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_85b59d3ea779b24c6fcfc14febb99387 = L.circleMarker(
+                [38.796356, -76.870605],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_85b59d3ea779b24c6fcfc14febb99387.bindTooltip(
+                `<div>
+                     VCTRY01 | E-4B Nightwatch | 200 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_6595898cabbf0f832ceade6ff49bfb8c = L.polyline(
+                [[31.5, 33.9], [31.3, 33.9], [31.0, 33.9]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_6595898cabbf0f832ceade6ff49bfb8c.bindTooltip(
+                `<div>
+                     UNK C/S (ae013e) | KC-135R Stratotanker | 22,000 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ea6d3b7d219b3a614eb3daddfff2f5e5 = L.circleMarker(
+                [31.5, 33.9],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_c95053aebd0150bca04e28854e46a92c = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_30f512be2ae944084d40a2fb40a6194b = $(`<div id="html_30f512be2ae944084d40a2fb40a6194b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">UNK C/S (ae013e)</b><br><br>         <b>Type:</b> KC-135R Stratotanker<br>         <b>Tail #:</b> 63-7981<br>         <b>Hex:</b> ae013e<br>         <b>Squawk:</b> 3425<br>         <b>Altitude:</b> 22,000 – 22,000 ft<br>         <b>Speed:</b> 432 – 442 kts<br>         <b>Source:</b> mode_s<br>         <b>Fixes:</b> 3<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:30:48     </div>     </div>`)[0];
+                popup_c95053aebd0150bca04e28854e46a92c.setContent(html_30f512be2ae944084d40a2fb40a6194b);
+            
+        
+
+        circle_marker_ea6d3b7d219b3a614eb3daddfff2f5e5.bindPopup(popup_c95053aebd0150bca04e28854e46a92c)
+        ;
+
+        
+    
+    
+            circle_marker_ea6d3b7d219b3a614eb3daddfff2f5e5.bindTooltip(
+                `<div>
+                     UNK C/S (ae013e) | KC-135R Stratotanker | 22,000 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b9b06372167c9f2b8e7aae7221ef5e88 = L.circleMarker(
+                [31.0, 33.9],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_b9b06372167c9f2b8e7aae7221ef5e88.bindTooltip(
+                `<div>
+                     UNK C/S (ae013e) | KC-135R Stratotanker | 22,000 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0e83d1db5fc14142eb14d000be9e9912 = L.polyline(
+                [[44.254234, 25.326033], [44.246841, 25.311649], [44.1, 25.1], [44.044632, 24.920439], [43.962017, 24.761045], [43.884232, 24.612211], [43.814507, 24.469872], [43.731239, 24.320547], [43.617722, 24.236103], [43.489925, 24.226963], [43.363331, 24.222204], [43.23819, 24.214357], [43.10247, 24.206762], [42.975204, 24.199663], [42.852715, 24.192312], [42.737629, 24.185398], [42.618095, 24.179388], [42.48399, 24.172825], [42.359985, 24.165882], [42.237785, 24.159241], [42.11095, 24.151983], [41.976345, 24.144819], [41.851685, 24.138332], [41.731579, 24.133562]],
+                {"bubblingMouseEvents": true, "color": "deepskyblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "deepskyblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_0e83d1db5fc14142eb14d000be9e9912.bindTooltip(
+                `<div>
+                     UNK C/S (ae0363) | KC-135R Stratotanker | 27,000 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_083deb647ae72a824a819a213377fa48 = L.circleMarker(
+                [44.254234, 25.326033],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_9c2e49a51b8e0cee1eaaf554cbf1b102 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_0c2f7e6dab94f55277146c471ec3c269 = $(`<div id="html_0c2f7e6dab94f55277146c471ec3c269" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">UNK C/S (ae0363)</b><br><br>         <b>Type:</b> KC-135R Stratotanker<br>         <b>Tail #:</b> 60-0341<br>         <b>Hex:</b> ae0363<br>         <b>Squawk:</b> 4131<br>         <b>Altitude:</b> 20,200 – 27,000 ft<br>         <b>Speed:</b> 417 – 464 kts<br>         <b>Source:</b> mlat<br>         <b>Fixes:</b> 24<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:52:18     </div>     </div>`)[0];
+                popup_9c2e49a51b8e0cee1eaaf554cbf1b102.setContent(html_0c2f7e6dab94f55277146c471ec3c269);
+            
+        
+
+        circle_marker_083deb647ae72a824a819a213377fa48.bindPopup(popup_9c2e49a51b8e0cee1eaaf554cbf1b102)
+        ;
+
+        
+    
+    
+            circle_marker_083deb647ae72a824a819a213377fa48.bindTooltip(
+                `<div>
+                     UNK C/S (ae0363) | KC-135R Stratotanker | 20,200 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_44710ae09578ef21a8678d3ab1ce23b1 = L.circleMarker(
+                [41.731579, 24.133562],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_44710ae09578ef21a8678d3ab1ce23b1.bindTooltip(
+                `<div>
+                     UNK C/S (ae0363) | KC-135R Stratotanker | 27,000 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_04cf2bfcde03439c2a11cc2122ad48a7 = L.polyline(
+                [[36.9, -124.1], [37.4, -123.5], [38.2, -123.8], [38.2, -123.7], [37.9, -123.2], [37.6, -122.8], [37.6, -122.7]],
+                {"bubblingMouseEvents": true, "color": "magenta", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "magenta", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_04cf2bfcde03439c2a11cc2122ad48a7.bindTooltip(
+                `<div>
+                     UNK C/S (ae0421) | KC-135R Stratotanker | 25,475 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_69d1a2bc93c8588cc617f0b6598350b3 = L.circleMarker(
+                [36.9, -124.1],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_edf9ac7a61b6851d884295da7da76d93 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_d101a9adf469f72ec7746df98acebfc9 = $(`<div id="html_d101a9adf469f72ec7746df98acebfc9" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">UNK C/S (ae0421)</b><br><br>         <b>Type:</b> KC-135R Stratotanker<br>         <b>Tail #:</b> 58-0089<br>         <b>Hex:</b> ae0421<br>         <b>Squawk:</b> Unavailable<br>         <b>Altitude:</b> 25,450 – 25,475 ft<br>         <b>Speed:</b> N/A<br>         <b>Source:</b> mode_s<br>         <b>Fixes:</b> 7<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:45:09     </div>     </div>`)[0];
+                popup_edf9ac7a61b6851d884295da7da76d93.setContent(html_d101a9adf469f72ec7746df98acebfc9);
+            
+        
+
+        circle_marker_69d1a2bc93c8588cc617f0b6598350b3.bindPopup(popup_edf9ac7a61b6851d884295da7da76d93)
+        ;
+
+        
+    
+    
+            circle_marker_69d1a2bc93c8588cc617f0b6598350b3.bindTooltip(
+                `<div>
+                     UNK C/S (ae0421) | KC-135R Stratotanker | 25,450 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1e418bd03866f3e87ec7ff5cf8ec1731 = L.circleMarker(
+                [37.6, -122.7],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_1e418bd03866f3e87ec7ff5cf8ec1731.bindTooltip(
+                `<div>
+                     UNK C/S (ae0421) | KC-135R Stratotanker | 25,475 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_8eb5b5ae6a6841d2c29eba5ec22ee763 = L.polyline(
+                [[41.546722, -114.669487], [41.415344, -114.624664], [41.286346, -114.580872], [41.154644, -114.536278], [41.027699, -114.493454], [40.897911, -114.449951], [40.770683, -114.407501], [40.639217, -114.363617], [40.511108, -114.321175], [40.381554, -114.278351], [40.252647, -114.23584], [40.122536, -114.193207], [39.992752, -114.150818], [39.86554, -114.109436], [39.73983, -114.068665], [39.618095, -114.029358], [39.482628, -113.985901], [39.354282, -113.944763], [39.222496, -113.902649], [39.093658, -113.861824], [38.969147, -113.822357], [38.840881, -113.781876], [38.713402, -113.741821], [38.584717, -113.701508]],
+                {"bubblingMouseEvents": true, "color": "lightgreen", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_8eb5b5ae6a6841d2c29eba5ec22ee763.bindTooltip(
+                `<div>
+                     UNK C/S (ae04c5) | KC-135R Stratotanker | 30,975 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_883349bbf659d13ba99e9d1013afb8c5 = L.circleMarker(
+                [41.546722, -114.669487],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_eddb99a74be8b8f58c5e17069f9aa95c = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_fcbce7996ab752a49a785606cf6c14c8 = $(`<div id="html_fcbce7996ab752a49a785606cf6c14c8" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">UNK C/S (ae04c5)</b><br><br>         <b>Type:</b> KC-135R Stratotanker<br>         <b>Tail #:</b> 59-1476<br>         <b>Hex:</b> ae04c5<br>         <b>Squawk:</b> 1565<br>         <b>Altitude:</b> 30,975 – 31,025 ft<br>         <b>Speed:</b> 458 – 471 kts<br>         <b>Source:</b> adsb_icao<br>         <b>Fixes:</b> 24<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:52:18     </div>     </div>`)[0];
+                popup_eddb99a74be8b8f58c5e17069f9aa95c.setContent(html_fcbce7996ab752a49a785606cf6c14c8);
+            
+        
+
+        circle_marker_883349bbf659d13ba99e9d1013afb8c5.bindPopup(popup_eddb99a74be8b8f58c5e17069f9aa95c)
+        ;
+
+        
+    
+    
+            circle_marker_883349bbf659d13ba99e9d1013afb8c5.bindTooltip(
+                `<div>
+                     UNK C/S (ae04c5) | KC-135R Stratotanker | 30,975 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5b79d1f5c54fa7c1c6a85047f9e3eb64 = L.circleMarker(
+                [38.584717, -113.701508],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_5b79d1f5c54fa7c1c6a85047f9e3eb64.bindTooltip(
+                `<div>
+                     UNK C/S (ae04c5) | KC-135R Stratotanker | 30,975 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_6b0b3fef501f0f990dfc8342fc65b01d = L.polyline(
+                [[44.409817, 25.6203], [44.347305, 25.498861], [44.282875, 25.372253], [44.216064, 25.244108], [44.144753, 25.108025], [44.077267, 24.973745], [44.004478, 24.835411], [43.931374, 24.695297], [43.838375, 24.519442], [43.751286, 24.355589], [43.638943, 24.243431], [43.482555, 24.225958], [43.348679, 24.219875], [43.200829, 24.211761], [43.049168, 24.202204], [42.904297, 24.19383], [42.750526, 24.186209], [42.602631, 24.178915], [42.454433, 24.170502], [42.317036, 24.16276], [42.15844, 24.153767], [42.010662, 24.145769], [41.880226, 24.140284], [41.745319, 24.131409]],
+                {"bubblingMouseEvents": true, "color": "coral", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "coral", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_6b0b3fef501f0f990dfc8342fc65b01d.bindTooltip(
+                `<div>
+                     UNK C/S (ae04e1) | KC-135R Stratotanker | 27,500 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f38f7e170851874b364166b96860787b = L.circleMarker(
+                [44.409817, 25.6203],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_37093e05931903461fe0a6c474c6a6ea = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_ea1daf20f3359dc51ec5385053756eed = $(`<div id="html_ea1daf20f3359dc51ec5385053756eed" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">UNK C/S (ae04e1)</b><br><br>         <b>Type:</b> KC-135R Stratotanker<br>         <b>Tail #:</b> 58-0120<br>         <b>Hex:</b> ae04e1<br>         <b>Squawk:</b> 4137<br>         <b>Altitude:</b> 13,125 – 27,500 ft<br>         <b>Speed:</b> 355 – 539 kts<br>         <b>Source:</b> mlat<br>         <b>Fixes:</b> 24<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:52:18     </div>     </div>`)[0];
+                popup_37093e05931903461fe0a6c474c6a6ea.setContent(html_ea1daf20f3359dc51ec5385053756eed);
+            
+        
+
+        circle_marker_f38f7e170851874b364166b96860787b.bindPopup(popup_37093e05931903461fe0a6c474c6a6ea)
+        ;
+
+        
+    
+    
+            circle_marker_f38f7e170851874b364166b96860787b.bindTooltip(
+                `<div>
+                     UNK C/S (ae04e1) | KC-135R Stratotanker | 13,125 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_443b7208044e9163fc15a2e0bd79b40a = L.circleMarker(
+                [41.745319, 24.131409],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_443b7208044e9163fc15a2e0bd79b40a.bindTooltip(
+                `<div>
+                     UNK C/S (ae04e1) | KC-135R Stratotanker | 27,500 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ed138e77bd681e0e7f5f47ab85f6474b = L.polyline(
+                [[50.5, -119.2], [50.0, -118.9], [50.5, -119.2], [49.3, -117.5], [48.7, -117.7], [48.892921, -117.973648], [48.729595, -117.933998], [48.640293, -117.912262], [48.543419, -117.890198], [48.458267, -117.867317], [48.370632, -117.846992], [48.29332, -117.828392], [48.22118, -117.810623], [48.158543, -117.753227], [48.099323, -117.684921]],
+                {"bubblingMouseEvents": true, "color": "turquoise", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "turquoise", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_ed138e77bd681e0e7f5f47ab85f6474b.bindTooltip(
+                `<div>
+                     UNK C/S (ae0696) | KC-135R Stratotanker | 7,175 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_06d59b1faa5c09204353034158b1016e = L.circleMarker(
+                [50.5, -119.2],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_49c9f462aa5bfd013b9c394c64e001ac = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_70514134f50da914710a57fddd04ad70 = $(`<div id="html_70514134f50da914710a57fddd04ad70" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">UNK C/S (ae0696)</b><br><br>         <b>Type:</b> KC-135R Stratotanker<br>         <b>Tail #:</b> 63-8884<br>         <b>Hex:</b> ae0696<br>         <b>Squawk:</b> 1602<br>         <b>Altitude:</b> 7,175 – 25,000 ft<br>         <b>Speed:</b> 231 – 343 kts<br>         <b>Source:</b> mlat<br>         <b>Fixes:</b> 15<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:52:18     </div>     </div>`)[0];
+                popup_49c9f462aa5bfd013b9c394c64e001ac.setContent(html_70514134f50da914710a57fddd04ad70);
+            
+        
+
+        circle_marker_06d59b1faa5c09204353034158b1016e.bindPopup(popup_49c9f462aa5bfd013b9c394c64e001ac)
+        ;
+
+        
+    
+    
+            circle_marker_06d59b1faa5c09204353034158b1016e.bindTooltip(
+                `<div>
+                     UNK C/S (ae0696) | KC-135R Stratotanker | 25,000 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d889d4cc2c4a96e92431506947bcf03c = L.circleMarker(
+                [48.099323, -117.684921],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_d889d4cc2c4a96e92431506947bcf03c.bindTooltip(
+                `<div>
+                     UNK C/S (ae0696) | KC-135R Stratotanker | 7,175 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3dadf366c4a1362d544b7a89f1a95466 = L.polyline(
+                [[38.200645, -113.612328], [38.077354, -113.558113], [37.951977, -113.51342], [37.843472, -113.563065], [37.739994, -113.629387], [37.628307, -113.705452], [37.52697, -113.77607], [37.417416, -113.844589], [37.304039, -113.921814], [37.203365, -113.990891], [37.094711, -114.062363], [36.999943, -114.124519], [36.910488, -114.183334], [36.817413, -114.244804], [36.743469, -114.314987], [36.672489, -114.398651], [36.656445, -114.493271], [36.642056, -114.602776], [36.611938, -114.682381], [36.534985, -114.752602], [36.472771, -114.801231], [36.423225, -114.835632], [36.362034, -114.895172], [36.334557, -114.906639]],
+                {"bubblingMouseEvents": true, "color": "gold", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gold", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_3dadf366c4a1362d544b7a89f1a95466.bindTooltip(
+                `<div>
+                     UNK C/S (ae07a8) | KC-135R Stratotanker | 3,575 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cf6c54dbbc22eeb2e1cfce1d5a1e4dab = L.circleMarker(
+                [38.200645, -113.612328],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_741a1dff6b5d346d326c5e2d187322b1 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_0702ff948f9e47e7c891b02ee7f900a8 = $(`<div id="html_0702ff948f9e47e7c891b02ee7f900a8" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">UNK C/S (ae07a8)</b><br><br>         <b>Type:</b> KC-135R Stratotanker<br>         <b>Tail #:</b> 59-1508<br>         <b>Hex:</b> ae07a8<br>         <b>Squawk:</b> 7442<br>         <b>Altitude:</b> 3,575 – 31,250 ft<br>         <b>Speed:</b> 200 – 450 kts<br>         <b>Source:</b> mlat<br>         <b>Fixes:</b> 24<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:52:18     </div>     </div>`)[0];
+                popup_741a1dff6b5d346d326c5e2d187322b1.setContent(html_0702ff948f9e47e7c891b02ee7f900a8);
+            
+        
+
+        circle_marker_cf6c54dbbc22eeb2e1cfce1d5a1e4dab.bindPopup(popup_741a1dff6b5d346d326c5e2d187322b1)
+        ;
+
+        
+    
+    
+            circle_marker_cf6c54dbbc22eeb2e1cfce1d5a1e4dab.bindTooltip(
+                `<div>
+                     UNK C/S (ae07a8) | KC-135R Stratotanker | 31,250 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9b5dcc696357a1b066bfbb0261724753 = L.circleMarker(
+                [36.334557, -114.906639],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_9b5dcc696357a1b066bfbb0261724753.bindTooltip(
+                `<div>
+                     UNK C/S (ae07a8) | KC-135R Stratotanker | 3,575 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_b4775ffd78ccbddf93fd6a64b2d1f821 = L.polyline(
+                [[37.0, -124.6], [37.0, -124.5], [38.0, -123.9], [38.2, -123.8], [37.7, -123.6], [37.9, -123.6], [38.0, -123.5]],
+                {"bubblingMouseEvents": true, "color": "violet", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "violet", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_b4775ffd78ccbddf93fd6a64b2d1f821.bindTooltip(
+                `<div>
+                     UNK C/S (ae07a9) | KC-135R Stratotanker | 25,975 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4eefbcc7c60627558b2203037d96f1e9 = L.circleMarker(
+                [37.0, -124.6],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_bd9a2d794e3933ba26918e782af96503 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_559e6c65d61b60276a07683854d6cbb4 = $(`<div id="html_559e6c65d61b60276a07683854d6cbb4" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">UNK C/S (ae07a9)</b><br><br>         <b>Type:</b> KC-135R Stratotanker<br>         <b>Tail #:</b> 59-1515<br>         <b>Hex:</b> ae07a9<br>         <b>Squawk:</b> 4000<br>         <b>Altitude:</b> 25,975 – 26,000 ft<br>         <b>Speed:</b> N/A<br>         <b>Source:</b> mode_s<br>         <b>Fixes:</b> 7<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:39:01     </div>     </div>`)[0];
+                popup_bd9a2d794e3933ba26918e782af96503.setContent(html_559e6c65d61b60276a07683854d6cbb4);
+            
+        
+
+        circle_marker_4eefbcc7c60627558b2203037d96f1e9.bindPopup(popup_bd9a2d794e3933ba26918e782af96503)
+        ;
+
+        
+    
+    
+            circle_marker_4eefbcc7c60627558b2203037d96f1e9.bindTooltip(
+                `<div>
+                     UNK C/S (ae07a9) | KC-135R Stratotanker | 26,000 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0bfee3db3c09ea2c800edffb949583eb = L.circleMarker(
+                [38.0, -123.5],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_0bfee3db3c09ea2c800edffb949583eb.bindTooltip(
+                `<div>
+                     UNK C/S (ae07a9) | KC-135R Stratotanker | 25,975 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3c3282a0ead5a7263503b913f8fc8e98 = L.polyline(
+                [[32.2, 33.4], [32.2, 33.3], [32.3, 33.3], [32.1, 33.4], [32.1, 33.2], [31.9, 33.5], [32.6, 33.1], [32.8, 33.0], [33.1, 33.3], [32.8, 32.9], [34.1, 33.1], [34.2, 32.7], [34.0, 33.1], [33.7, 32.6], [33.8, 31.9]],
+                {"bubblingMouseEvents": true, "color": "lightblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_3c3282a0ead5a7263503b913f8fc8e98.bindTooltip(
+                `<div>
+                     MOOSE40 | C-17A Globemaster | 34,000 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3af63993db283da6599860f4023ad655 = L.circleMarker(
+                [32.2, 33.4],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_87ac816241e67e4e93a30d0907d65f00 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_800ae27332e94189f415a1d7b234fe60 = $(`<div id="html_800ae27332e94189f415a1d7b234fe60" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">MOOSE40</b><br><br>         <b>Type:</b> C-17A Globemaster<br>         <b>Tail #:</b> 89-1191<br>         <b>Hex:</b> ae07cf<br>         <b>Squawk:</b> 3416<br>         <b>Altitude:</b> 34,000 – 34,000 ft<br>         <b>Speed:</b> N/A<br>         <b>Source:</b> mode_s<br>         <b>Fixes:</b> 15<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:51:17     </div>     </div>`)[0];
+                popup_87ac816241e67e4e93a30d0907d65f00.setContent(html_800ae27332e94189f415a1d7b234fe60);
+            
+        
+
+        circle_marker_3af63993db283da6599860f4023ad655.bindPopup(popup_87ac816241e67e4e93a30d0907d65f00)
+        ;
+
+        
+    
+    
+            circle_marker_3af63993db283da6599860f4023ad655.bindTooltip(
+                `<div>
+                     MOOSE40 | C-17A Globemaster | 34,000 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7071ec46c54394c42bf92aee3d74e852 = L.circleMarker(
+                [33.8, 31.9],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_7071ec46c54394c42bf92aee3d74e852.bindTooltip(
+                `<div>
+                     MOOSE40 | C-17A Globemaster | 34,000 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_2af48777acd607a3f81056b90401e360 = L.polyline(
+                [[32.7, -79.9], [32.879002, -79.976685], [32.88195, -79.889351], [32.883968, -79.790367], [32.91188, -79.70507], [32.971733, -79.649574], [33.055164, -79.544853]],
+                {"bubblingMouseEvents": true, "color": "greenyellow", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "greenyellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_2af48777acd607a3f81056b90401e360.bindTooltip(
+                `<div>
+                     RCH657 | C-17A Globemaster | 10,475 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_209892c0b4ea071a794561f337bacaa6 = L.circleMarker(
+                [32.7, -79.9],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_88312a81e9203cc812fe164ce4a474b8 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_39cbc1de61b3f7d27827ecf44606573b = $(`<div id="html_39cbc1de61b3f7d27827ecf44606573b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">RCH657</b><br><br>         <b>Type:</b> C-17A Globemaster<br>         <b>Tail #:</b> 98-0057<br>         <b>Hex:</b> ae0803<br>         <b>Squawk:</b> 0767<br>         <b>Altitude:</b> 1,950 – 10,475 ft<br>         <b>Speed:</b> 202 – 307 kts<br>         <b>Source:</b> mlat<br>         <b>Fixes:</b> 7<br>         <b>First:</b> 2026-05-25 23:46:10<br>         <b>Last:</b> 2026-05-25 23:52:18     </div>     </div>`)[0];
+                popup_88312a81e9203cc812fe164ce4a474b8.setContent(html_39cbc1de61b3f7d27827ecf44606573b);
+            
+        
+
+        circle_marker_209892c0b4ea071a794561f337bacaa6.bindPopup(popup_88312a81e9203cc812fe164ce4a474b8)
+        ;
+
+        
+    
+    
+            circle_marker_209892c0b4ea071a794561f337bacaa6.bindTooltip(
+                `<div>
+                     RCH657 | C-17A Globemaster | 1,950 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5609ea3bc99be0d6504b87176bb2e5f8 = L.circleMarker(
+                [33.055164, -79.544853],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_5609ea3bc99be0d6504b87176bb2e5f8.bindTooltip(
+                `<div>
+                     RCH657 | C-17A Globemaster | 10,475 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_627167e5f271cbeceadb91c79739d1bb = L.polyline(
+                [[36.449844, -126.975479], [36.407063, -127.122513], [36.363071, -127.273048], [36.32164, -127.414528], [36.280289, -127.555046], [36.267746, -127.597504], [36.186172, -127.871758], [36.141575, -128.020523], [36.099792, -128.159241]],
+                {"bubblingMouseEvents": true, "color": "tomato", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "tomato", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_627167e5f271cbeceadb91c79739d1bb.bindTooltip(
+                `<div>
+                     RCH125 | C-17A Globemaster | 34,000 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ae2b3b3ba0817b7d1ec64f3e22c4e83e = L.circleMarker(
+                [36.449844, -126.975479],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_bb77a32a95cc313bfa8771c093aee9fc = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_908b4f15eeafe6f8c948de82d40c7053 = $(`<div id="html_908b4f15eeafe6f8c948de82d40c7053" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">RCH125</b><br><br>         <b>Type:</b> C-17A Globemaster<br>         <b>Tail #:</b> 02-1099<br>         <b>Hex:</b> ae1171<br>         <b>Squawk:</b> 3256<br>         <b>Altitude:</b> 34,000 – 34,000 ft<br>         <b>Speed:</b> 449 – 454 kts<br>         <b>Source:</b> adsb_icao<br>         <b>Fixes:</b> 9<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:36:58     </div>     </div>`)[0];
+                popup_bb77a32a95cc313bfa8771c093aee9fc.setContent(html_908b4f15eeafe6f8c948de82d40c7053);
+            
+        
+
+        circle_marker_ae2b3b3ba0817b7d1ec64f3e22c4e83e.bindPopup(popup_bb77a32a95cc313bfa8771c093aee9fc)
+        ;
+
+        
+    
+    
+            circle_marker_ae2b3b3ba0817b7d1ec64f3e22c4e83e.bindTooltip(
+                `<div>
+                     RCH125 | C-17A Globemaster | 34,000 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_544c8f0240705d33a06b725c9fd12516 = L.circleMarker(
+                [36.099792, -128.159241],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_544c8f0240705d33a06b725c9fd12516.bindTooltip(
+                `<div>
+                     RCH125 | C-17A Globemaster | 34,000 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_8e5c067ff3b1efc45d0cc8d3620c908f = L.polyline(
+                [[62.351753, -148.888809], [62.265789, -148.957504], [62.171768, -149.034195], [62.083557, -149.101364], [61.994267, -149.170242], [61.909374, -149.23941], [61.834923, -149.302521], [61.780678, -149.386078], [61.727489, -149.510498], [61.663364, -149.666809], [61.611889, -149.7901], [61.557964, -149.913528], [61.504208, -150.037949], [61.448063, -150.111969], [61.382187, -150.151047], [61.328503, -150.180328], [61.273617, -150.165283], [61.23357, -150.104782], [61.23518, -150.006912], [61.242989, -149.914734], [61.249294, -149.835434]],
+                {"bubblingMouseEvents": true, "color": "aquamarine", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "aquamarine", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_8e5c067ff3b1efc45d0cc8d3620c908f.bindTooltip(
+                `<div>
+                     UNK C/S (ae11ea) | E-3G AWACS | 425 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_676baef7b6fd442fa569a169abc4d143 = L.circleMarker(
+                [62.351753, -148.888809],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_85b856b0c0c0645448f4c6412121ed69 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_6f66b94a814b5bb86cec7e0783795f93 = $(`<div id="html_6f66b94a814b5bb86cec7e0783795f93" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">UNK C/S (ae11ea)</b><br><br>         <b>Type:</b> E-3G AWACS<br>         <b>Tail #:</b> 80-0137<br>         <b>Hex:</b> ae11ea<br>         <b>Squawk:</b> 2232<br>         <b>Altitude:</b> 425 – 17,200 ft<br>         <b>Speed:</b> 130 – 350 kts<br>         <b>Source:</b> mlat<br>         <b>Fixes:</b> 21<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:49:14     </div>     </div>`)[0];
+                popup_85b856b0c0c0645448f4c6412121ed69.setContent(html_6f66b94a814b5bb86cec7e0783795f93);
+            
+        
+
+        circle_marker_676baef7b6fd442fa569a169abc4d143.bindPopup(popup_85b856b0c0c0645448f4c6412121ed69)
+        ;
+
+        
+    
+    
+            circle_marker_676baef7b6fd442fa569a169abc4d143.bindTooltip(
+                `<div>
+                     UNK C/S (ae11ea) | E-3G AWACS | 17,200 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f8eccf060310f45151c69380e3891308 = L.circleMarker(
+                [61.249294, -149.835434],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_f8eccf060310f45151c69380e3891308.bindTooltip(
+                `<div>
+                     UNK C/S (ae11ea) | E-3G AWACS | 425 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_7cc8316bab48fde84729ac7fb7a48d95 = L.polyline(
+                [[14.611679, -17.310665], [14.544223, -17.38331], [14.469739, -17.463636], [14.38916, -17.550138], [14.311368, -17.633442], [14.229204, -17.721525], [14.145584, -17.811016], [14.060486, -17.902222], [13.973678, -17.989389], [13.854737, -17.99946], [13.732724, -17.999943], [13.609543, -18.000057], [13.483763, -17.999943], [13.364496, -17.999943], [13.25592, -17.999962], [13.20163, -17.999962], [12.982116, -17.987268], [12.874999, -17.915232], [12.786364, -17.855722], [12.654053, -17.766598], [12.528488, -17.682116], [12.413666, -17.604916], [12.359293, -17.568295]],
+                {"bubblingMouseEvents": true, "color": "cyan", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "cyan", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_7cc8316bab48fde84729ac7fb7a48d95.bindTooltip(
+                `<div>
+                     RCH530 | C-17A Globemaster | 27,400 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_234cd2e396b78ef7dee8e56b9e1524ca = L.circleMarker(
+                [14.611679, -17.310665],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_93cd4da1221158b2af9056356a37ae67 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_717c6e0fe5d0f417693a79fee1ecfa0b = $(`<div id="html_717c6e0fe5d0f417693a79fee1ecfa0b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">RCH530</b><br><br>         <b>Type:</b> C-17A Globemaster<br>         <b>Tail #:</b> 04-4128<br>         <b>Hex:</b> ae123a<br>         <b>Squawk:</b> 0700<br>         <b>Altitude:</b> 9,300 – 27,400 ft<br>         <b>Speed:</b> 320 – 479 kts<br>         <b>Source:</b> adsb_icao<br>         <b>Fixes:</b> 23<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:51:17     </div>     </div>`)[0];
+                popup_93cd4da1221158b2af9056356a37ae67.setContent(html_717c6e0fe5d0f417693a79fee1ecfa0b);
+            
+        
+
+        circle_marker_234cd2e396b78ef7dee8e56b9e1524ca.bindPopup(popup_93cd4da1221158b2af9056356a37ae67)
+        ;
+
+        
+    
+    
+            circle_marker_234cd2e396b78ef7dee8e56b9e1524ca.bindTooltip(
+                `<div>
+                     RCH530 | C-17A Globemaster | 9,300 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_74e2562519ec6344ccdbe469c5ae606b = L.circleMarker(
+                [12.359293, -17.568295],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_74e2562519ec6344ccdbe469c5ae606b.bindTooltip(
+                `<div>
+                     RCH530 | C-17A Globemaster | 27,400 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_4823dffec53d28c936cbddd235d3cdeb = L.polyline(
+                [[31.8, 33.2], [31.8, 33.2], [31.9, 33.8], [31.9, 33.9], [31.9, 33.9], [31.9, 33.8], [31.8, 33.2], [31.8, 33.2], [31.8, 33.2], [31.5, 33.7], [31.5, 33.7], [31.8, 33.2], [31.9, 33.8], [32.8, 33.8]],
+                {"bubblingMouseEvents": true, "color": "lime", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lime", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_4823dffec53d28c936cbddd235d3cdeb.bindTooltip(
+                `<div>
+                     MOOSE68 | C-17A Globemaster | 34,000 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3528863ddd1f6161ea3a118863a3256a = L.circleMarker(
+                [31.8, 33.2],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_8c04c2d9ac0b117af12eadc0cda81468 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_ac62928a774a32dc7b81cb5272d787a3 = $(`<div id="html_ac62928a774a32dc7b81cb5272d787a3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">MOOSE68</b><br><br>         <b>Type:</b> C-17A Globemaster<br>         <b>Tail #:</b> 07-7170<br>         <b>Hex:</b> ae1468<br>         <b>Squawk:</b> 4403<br>         <b>Altitude:</b> 33,975 – 34,000 ft<br>         <b>Speed:</b> N/A<br>         <b>Source:</b> mode_s<br>         <b>Fixes:</b> 14<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:52:18     </div>     </div>`)[0];
+                popup_8c04c2d9ac0b117af12eadc0cda81468.setContent(html_ac62928a774a32dc7b81cb5272d787a3);
+            
+        
+
+        circle_marker_3528863ddd1f6161ea3a118863a3256a.bindPopup(popup_8c04c2d9ac0b117af12eadc0cda81468)
+        ;
+
+        
+    
+    
+            circle_marker_3528863ddd1f6161ea3a118863a3256a.bindTooltip(
+                `<div>
+                     MOOSE68 | C-17A Globemaster | 34,000 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3f89ac1ae6274663104f09d4a2705b03 = L.circleMarker(
+                [32.8, 33.8],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_3f89ac1ae6274663104f09d4a2705b03.bindTooltip(
+                `<div>
+                     MOOSE68 | C-17A Globemaster | 34,000 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_066936cb4d54e1c3669ed4434b43f2b4 = L.polyline(
+                [[33.7, 31.7], [33.4, 31.4]],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_066936cb4d54e1c3669ed4434b43f2b4.bindTooltip(
+                `<div>
+                     UNK C/S (ae146c) | C-17A Globemaster | N/A
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fef7815be43e2cb0f573e55f542a890f = L.circleMarker(
+                [33.7, 31.7],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_bba71336b62c1644c741563c4935ef03 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_184f9c43aae6eaa07fac3a4344882461 = $(`<div id="html_184f9c43aae6eaa07fac3a4344882461" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">UNK C/S (ae146c)</b><br><br>         <b>Type:</b> C-17A Globemaster<br>         <b>Tail #:</b> 07-7174<br>         <b>Hex:</b> ae146c<br>         <b>Squawk:</b> Unavailable<br>         <b>Altitude:</b> N/A<br>         <b>Speed:</b> N/A<br>         <b>Source:</b> mode_s<br>         <b>Fixes:</b> 2<br>         <b>First:</b> 2026-05-25 23:32:51<br>         <b>Last:</b> 2026-05-25 23:41:03     </div>     </div>`)[0];
+                popup_bba71336b62c1644c741563c4935ef03.setContent(html_184f9c43aae6eaa07fac3a4344882461);
+            
+        
+
+        circle_marker_fef7815be43e2cb0f573e55f542a890f.bindPopup(popup_bba71336b62c1644c741563c4935ef03)
+        ;
+
+        
+    
+    
+            circle_marker_fef7815be43e2cb0f573e55f542a890f.bindTooltip(
+                `<div>
+                     UNK C/S (ae146c) | C-17A Globemaster | N/A — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2b0882a3bc4b16a1eb83cd4efc72ef79 = L.circleMarker(
+                [33.4, 31.4],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_2b0882a3bc4b16a1eb83cd4efc72ef79.bindTooltip(
+                `<div>
+                     UNK C/S (ae146c) | C-17A Globemaster | N/A — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d3057fdb826c9ba987abe39f33fffa5c = L.polyline(
+                [[50.834793, -4.36996], [50.792633, -4.569199], [50.750504, -4.766388], [50.706886, -4.968719], [50.66423, -5.164442], [50.621323, -5.359472], [50.577656, -5.556335], [50.53299, -5.75539], [50.488789, -5.950952], [50.444, -6.14714], [50.398991, -6.342229], [50.352715, -6.541022], [50.307358, -6.734619], [50.26152, -6.927993], [50.214409, -7.125153], [50.205704, -7.329737], [50.232651, -7.534236], [50.261475, -7.747885], [50.289551, -7.956776], [50.317291, -8.166256], [50.344524, -8.374254], [50.371429, -8.583217], [50.397732, -8.793071], [50.423584, -9.002139]],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_d3057fdb826c9ba987abe39f33fffa5c.bindTooltip(
+                `<div>
+                     RCH466 | C-17A Globemaster | 30,000 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_527d5818673eca42bdced55ee9023d50 = L.circleMarker(
+                [50.834793, -4.36996],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_e2f155c2b918bfefa252f71f088692a9 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_3b77e0f03c4514ab8b03ea300d040320 = $(`<div id="html_3b77e0f03c4514ab8b03ea300d040320" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">RCH466</b><br><br>         <b>Type:</b> C-17A Globemaster<br>         <b>Tail #:</b> 08-8195<br>         <b>Hex:</b> ae2fa7<br>         <b>Squawk:</b> 0634<br>         <b>Altitude:</b> 30,000 – 30,000 ft<br>         <b>Speed:</b> 466 – 483 kts<br>         <b>Source:</b> adsb_icao<br>         <b>Fixes:</b> 24<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:52:18     </div>     </div>`)[0];
+                popup_e2f155c2b918bfefa252f71f088692a9.setContent(html_3b77e0f03c4514ab8b03ea300d040320);
+            
+        
+
+        circle_marker_527d5818673eca42bdced55ee9023d50.bindPopup(popup_e2f155c2b918bfefa252f71f088692a9)
+        ;
+
+        
+    
+    
+            circle_marker_527d5818673eca42bdced55ee9023d50.bindTooltip(
+                `<div>
+                     RCH466 | C-17A Globemaster | 30,000 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fe720b5a002fe9b1902b28a8c1953c10 = L.circleMarker(
+                [50.423584, -9.002139],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_fe720b5a002fe9b1902b28a8c1953c10.bindTooltip(
+                `<div>
+                     RCH466 | C-17A Globemaster | 30,000 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_8cf8bf59f795e67744a50e79b503d134 = L.polyline(
+                [[22.1, -155.0], [21.9, -154.7], [22.1, -155.0], [22.0, -154.9], [22.1, -155.0], [22.1, -155.0], [22.1, -155.0]],
+                {"bubblingMouseEvents": true, "color": "deepskyblue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "deepskyblue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_8cf8bf59f795e67744a50e79b503d134.bindTooltip(
+                `<div>
+                     UNK C/S (ae2faa) | C-17A Globemaster | 28,000 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_defba9e28a8d2f8bdaf9f522b5769868 = L.circleMarker(
+                [22.1, -155.0],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_53d4286601994801618650b7a8aefbd7 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f25d955ca5bf781750680a0c189dd6bd = $(`<div id="html_f25d955ca5bf781750680a0c189dd6bd" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">UNK C/S (ae2faa)</b><br><br>         <b>Type:</b> C-17A Globemaster<br>         <b>Tail #:</b> 08-8198<br>         <b>Hex:</b> ae2faa<br>         <b>Squawk:</b> Unavailable<br>         <b>Altitude:</b> 28,000 – 28,000 ft<br>         <b>Speed:</b> N/A<br>         <b>Source:</b> mode_s<br>         <b>Fixes:</b> 7<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:34:55     </div>     </div>`)[0];
+                popup_53d4286601994801618650b7a8aefbd7.setContent(html_f25d955ca5bf781750680a0c189dd6bd);
+            
+        
+
+        circle_marker_defba9e28a8d2f8bdaf9f522b5769868.bindPopup(popup_53d4286601994801618650b7a8aefbd7)
+        ;
+
+        
+    
+    
+            circle_marker_defba9e28a8d2f8bdaf9f522b5769868.bindTooltip(
+                `<div>
+                     UNK C/S (ae2faa) | C-17A Globemaster | 28,000 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ddf0bc4a0c7a15673995ff8d1ba5bfed = L.circleMarker(
+                [22.1, -155.0],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_ddf0bc4a0c7a15673995ff8d1ba5bfed.bindTooltip(
+                `<div>
+                     UNK C/S (ae2faa) | C-17A Globemaster | 28,000 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ee65e2d68eb511a385163ed0bfdde171 = L.polyline(
+                [[4.9, -0.1], [4.9, -0.1], [4.9, -0.1], [4.9, -0.1], [4.9, -0.1], [4.9, -0.1], [4.9, -0.1], [4.9, -0.1], [4.9, -0.1], [4.9, -0.1], [4.9, -0.1]],
+                {"bubblingMouseEvents": true, "color": "magenta", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "magenta", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_ee65e2d68eb511a385163ed0bfdde171.bindTooltip(
+                `<div>
+                     RCH525 | C-17A Globemaster | 35,000 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ba71a99c33570df8e074d39ec0db59f7 = L.circleMarker(
+                [4.9, -0.1],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_b93b32224682d520dd3e5f6edc91ae6b = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_f35edddb4bebc58d3053edbcc4ce8178 = $(`<div id="html_f35edddb4bebc58d3053edbcc4ce8178" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">RCH525</b><br><br>         <b>Type:</b> C-17A Globemaster<br>         <b>Tail #:</b> 09-9206<br>         <b>Hex:</b> ae49c2<br>         <b>Squawk:</b> 6623<br>         <b>Altitude:</b> 35,000 – 35,000 ft<br>         <b>Speed:</b> N/A<br>         <b>Source:</b> mode_s<br>         <b>Fixes:</b> 11<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:40:02     </div>     </div>`)[0];
+                popup_b93b32224682d520dd3e5f6edc91ae6b.setContent(html_f35edddb4bebc58d3053edbcc4ce8178);
+            
+        
+
+        circle_marker_ba71a99c33570df8e074d39ec0db59f7.bindPopup(popup_b93b32224682d520dd3e5f6edc91ae6b)
+        ;
+
+        
+    
+    
+            circle_marker_ba71a99c33570df8e074d39ec0db59f7.bindTooltip(
+                `<div>
+                     RCH525 | C-17A Globemaster | 35,000 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c5b521095b0157ca3847721e75b896fa = L.circleMarker(
+                [4.9, -0.1],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_c5b521095b0157ca3847721e75b896fa.bindTooltip(
+                `<div>
+                     RCH525 | C-17A Globemaster | 35,000 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_08002d0cb1ed282723310a4febe2fa90 = L.polyline(
+                [[34.0, 32.9], [33.2, 32.9], [33.0, 32.5], [33.3, 32.4], [33.5, 32.5], [32.8, 32.7], [33.2, 32.9], [33.3, 32.8], [33.5, 32.7], [33.7, 32.5], [33.6, 32.4], [33.7, 32.6], [33.9, 32.4], [33.9, 32.2]],
+                {"bubblingMouseEvents": true, "color": "lightgreen", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "lightgreen", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_08002d0cb1ed282723310a4febe2fa90.bindTooltip(
+                `<div>
+                     RCH185 | C-17A Globemaster | 34,000 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4d3a4d10005e44baf5ffb66cbe831e43 = L.circleMarker(
+                [34.0, 32.9],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_8a15f3d13e806dc9d2d4129d0bbed0db = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_459e2baa3053d66114c71976dae31a6b = $(`<div id="html_459e2baa3053d66114c71976dae31a6b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">RCH185</b><br><br>         <b>Type:</b> C-17A Globemaster<br>         <b>Tail #:</b> 10-0216<br>         <b>Hex:</b> ae4d69<br>         <b>Squawk:</b> 1140<br>         <b>Altitude:</b> 34,000 – 34,000 ft<br>         <b>Speed:</b> N/A<br>         <b>Source:</b> mode_s<br>         <b>Fixes:</b> 14<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:47:11     </div>     </div>`)[0];
+                popup_8a15f3d13e806dc9d2d4129d0bbed0db.setContent(html_459e2baa3053d66114c71976dae31a6b);
+            
+        
+
+        circle_marker_4d3a4d10005e44baf5ffb66cbe831e43.bindPopup(popup_8a15f3d13e806dc9d2d4129d0bbed0db)
+        ;
+
+        
+    
+    
+            circle_marker_4d3a4d10005e44baf5ffb66cbe831e43.bindTooltip(
+                `<div>
+                     RCH185 | C-17A Globemaster | 34,000 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a190a81aebe5dd2cbff86da008f000a0 = L.circleMarker(
+                [33.9, 32.2],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_a190a81aebe5dd2cbff86da008f000a0.bindTooltip(
+                `<div>
+                     RCH185 | C-17A Globemaster | 34,000 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_f7d3ad45b816a02fd1e14317db6903d1 = L.polyline(
+                [[36.8, 27.6], [36.7, 27.6], [36.7, 27.7], [36.8, 27.6], [36.7, 27.7], [36.5, 28.0], [36.7, 27.8], [34.724991, 32.265713], [34.3, 32.7], [33.4, 33.0]],
+                {"bubblingMouseEvents": true, "color": "coral", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "coral", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_f7d3ad45b816a02fd1e14317db6903d1.bindTooltip(
+                `<div>
+                     MOOSE67 | C-17A Globemaster | 33,025 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_343aac4ca1647721f3177d0770a36067 = L.circleMarker(
+                [36.8, 27.6],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_68152f204b8240b808224d7862e36520 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_c58b77d87eff337cc6a50adcbf49c74a = $(`<div id="html_c58b77d87eff337cc6a50adcbf49c74a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">MOOSE67</b><br><br>         <b>Type:</b> C-17A Globemaster<br>         <b>Tail #:</b> 10-0218<br>         <b>Hex:</b> ae4f12<br>         <b>Squawk:</b> 7424<br>         <b>Altitude:</b> 33,025 – 33,050 ft<br>         <b>Speed:</b> N/A<br>         <b>Source:</b> mode_s<br>         <b>Fixes:</b> 10<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:52:18     </div>     </div>`)[0];
+                popup_68152f204b8240b808224d7862e36520.setContent(html_c58b77d87eff337cc6a50adcbf49c74a);
+            
+        
+
+        circle_marker_343aac4ca1647721f3177d0770a36067.bindPopup(popup_68152f204b8240b808224d7862e36520)
+        ;
+
+        
+    
+    
+            circle_marker_343aac4ca1647721f3177d0770a36067.bindTooltip(
+                `<div>
+                     MOOSE67 | C-17A Globemaster | 33,050 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d982995daae7afec9fe1c7abc934d94d = L.circleMarker(
+                [33.4, 33.0],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_d982995daae7afec9fe1c7abc934d94d.bindTooltip(
+                `<div>
+                     MOOSE67 | C-17A Globemaster | 33,025 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_0cb1d3b0e3add36d8970be29bedb7ab9 = L.polyline(
+                [[25.2, 56.5], [25.1, 56.4], [25.2, 56.5], [25.4, 57.4], [25.4, 57.3], [25.4, 57.1], [25.4, 57.0], [25.4, 57.2], [25.5, 57.5], [25.6, 57.8], [25.8, 58.7], [25.3, 56.5], [25.1, 56.1], [25.1, 56.3], [24.8, 55.7], [25.0, 56.0]],
+                {"bubblingMouseEvents": true, "color": "turquoise", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "turquoise", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_0cb1d3b0e3add36d8970be29bedb7ab9.bindTooltip(
+                `<div>
+                     UNK C/S (ae5fac) | KC-46A Pegasus | 17,000 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_65704f38132f7d82b203a77e6e95ffde = L.circleMarker(
+                [25.2, 56.5],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_b3763423e961192def7466cf4507bf06 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_6b9593f78fc793a238c490ba8980220b = $(`<div id="html_6b9593f78fc793a238c490ba8980220b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">UNK C/S (ae5fac)</b><br><br>         <b>Type:</b> KC-46A Pegasus<br>         <b>Tail #:</b> 19-46065<br>         <b>Hex:</b> ae5fac<br>         <b>Squawk:</b> 0711<br>         <b>Altitude:</b> 17,000 – 17,000 ft<br>         <b>Speed:</b> N/A<br>         <b>Source:</b> mode_s<br>         <b>Fixes:</b> 16<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:52:18     </div>     </div>`)[0];
+                popup_b3763423e961192def7466cf4507bf06.setContent(html_6b9593f78fc793a238c490ba8980220b);
+            
+        
+
+        circle_marker_65704f38132f7d82b203a77e6e95ffde.bindPopup(popup_b3763423e961192def7466cf4507bf06)
+        ;
+
+        
+    
+    
+            circle_marker_65704f38132f7d82b203a77e6e95ffde.bindTooltip(
+                `<div>
+                     UNK C/S (ae5fac) | KC-46A Pegasus | 17,000 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_39b3287e7d63031066ca79501a329c71 = L.circleMarker(
+                [25.0, 56.0],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_39b3287e7d63031066ca79501a329c71.bindTooltip(
+                `<div>
+                     UNK C/S (ae5fac) | KC-46A Pegasus | 17,000 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c8e8767057169f3fa1a6a2df7bf2cf85 = L.polyline(
+                [[37.0, -124.5], [37.6, -123.7], [38.2, -123.9], [38.1, -123.8], [38.2, -123.8], [38.1, -123.6], [37.7, -122.9]],
+                {"bubblingMouseEvents": true, "color": "gold", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "gold", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.85, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            poly_line_c8e8767057169f3fa1a6a2df7bf2cf85.bindTooltip(
+                `<div>
+                     UNK C/S (aed555) | KC-46A Pegasus | 25,000 ft
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a36354505688d25fefd1278a22c16072 = L.circleMarker(
+                [37.0, -124.5],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+        var popup_95387458da6407f84e215a3f858a5211 = L.popup({
+  "maxWidth": 260,
+});
+
+        
+            
+                var html_1b78d18c0509d3b685b8557744cfa39a = $(`<div id="html_1b78d18c0509d3b685b8557744cfa39a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: monospace; min-width: 210px; font-size: 12px">         <b style="font-size: 14px">UNK C/S (aed555)</b><br><br>         <b>Type:</b> KC-46A Pegasus<br>         <b>Tail #:</b> 19-46110<br>         <b>Hex:</b> aed555<br>         <b>Squawk:</b> Unavailable<br>         <b>Altitude:</b> 25,000 – 25,000 ft<br>         <b>Speed:</b> N/A<br>         <b>Source:</b> mode_s<br>         <b>Fixes:</b> 7<br>         <b>First:</b> 2026-05-25 23:28:46<br>         <b>Last:</b> 2026-05-25 23:44:07     </div>     </div>`)[0];
+                popup_95387458da6407f84e215a3f858a5211.setContent(html_1b78d18c0509d3b685b8557744cfa39a);
+            
+        
+
+        circle_marker_a36354505688d25fefd1278a22c16072.bindPopup(popup_95387458da6407f84e215a3f858a5211)
+        ;
+
+        
+    
+    
+            circle_marker_a36354505688d25fefd1278a22c16072.bindTooltip(
+                `<div>
+                     UNK C/S (aed555) | KC-46A Pegasus | 25,000 ft — start
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80dac8c8093db52f853b17ebdc63c9d4 = L.circleMarker(
+                [37.7, -122.9],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+        
+    
+            circle_marker_80dac8c8093db52f853b17ebdc63c9d4.bindTooltip(
+                `<div>
+                     UNK C/S (aed555) | KC-46A Pegasus | 25,000 ft — last known
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var layer_control_83df00a298e395bb68215aee00c598a3_layers = {
+                base_layers : {
+                    "cartodbdarkmatter" : tile_layer_6e03f441710fb2da579f5216f11d8fe6,
+                },
+                overlays :  {
+                    "Military Bases" : feature_group_50e7639e4a91b268ea8a003175f17158,
+                },
+            };
+            let layer_control_83df00a298e395bb68215aee00c598a3 = L.control.layers(
+                layer_control_83df00a298e395bb68215aee00c598a3_layers.base_layers,
+                layer_control_83df00a298e395bb68215aee00c598a3_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_97d85236ca58c0cf39b4cfc5f72544fd);
+
+        
+</script>
+</html>

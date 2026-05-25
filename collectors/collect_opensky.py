@@ -1,12 +1,16 @@
 import os
+import sys
 import time
 from datetime import datetime
 import csv
 import requests
 from geopy.distance import geodesic
 from dotenv import load_dotenv
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, BASE_DIR)
 from mapping import TYPE_MAP
-from aircraft_tracker import check_nearby_aircraft
+from alerts.aircraft_tracker import check_nearby_aircraft
 
 # --- LOAD .ENV ---
 load_dotenv()
@@ -168,7 +172,7 @@ def collect_data():
 # --- MAIN LOOP ---
 if __name__ == "__main__":
 
-    output_file = "aircraft_data_opensky.csv"
+    output_file = os.path.join(BASE_DIR, 'data', 'aircraft_data_opensky.csv')
 
     fieldnames = ['hex',
                   'callsign',
@@ -202,7 +206,7 @@ if __name__ == "__main__":
             print(f"Run {i+1}/{MINUTES_TO_RUN}: Saved {len(aircraft_data)} aircraft.")
 
         except Exception as e:
-            with open("error_log.txt", 'a') as err:
+            with open(os.path.join(BASE_DIR, 'logs', 'error_log.txt'), 'a') as err:
                 err.write(f"[{datetime.now()}] Error: {str(e)}\n")
 
         time.sleep(MINUTES_BETWEEN_RUNS * 60)
