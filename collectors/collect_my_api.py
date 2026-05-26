@@ -100,18 +100,17 @@ def collect_data():
         vertical_rate = int(plane.get('baro_rate')) if isinstance(plane.get('baro_rate'), (int, float)) else None
         emergency = plane.get('emergency', 'none') not in ('none', '', None)
 
-        # Update missing info dictionary
-        if callsign != 'UNK C/S' and squawk != 'Unavailable':
-          missing_info_dict[hex_id] = {
-            'callsign': callsign,
-            'squawk': squawk,
-          }
+        # Update missing info dictionary — callsign and squawk tracked independently
+        if callsign != 'UNK C/S':
+          missing_info_dict.setdefault(hex_id, {})['callsign'] = callsign
+        if squawk != 'Unavailable':
+          missing_info_dict.setdefault(hex_id, {})['squawk'] = squawk
 
         # Fill in from memory if currently missing
         if hex_id in missing_info_dict:
-          if callsign == 'UNK C/S':
+          if callsign == 'UNK C/S' and 'callsign' in missing_info_dict[hex_id]:
             callsign = missing_info_dict[hex_id]['callsign']
-          if squawk == 'Unavailable':
+          if squawk == 'Unavailable' and 'squawk' in missing_info_dict[hex_id]:
             squawk = missing_info_dict[hex_id]['squawk']
 
         aircraft_dict[unique_key] = {
@@ -148,8 +147,10 @@ def backfill_unknown_callsigns(output_file, fieldnames):
   with open(output_file, 'r', newline='') as f:
     for row in csv.DictReader(f):
       if row['hex'] in hexes_to_update and row['callsign'] == 'UNK C/S':
-        row['callsign'] = missing_info_dict[row['hex']]['callsign']
-        updated += 1
+        new_cs = missing_info_dict[row['hex']].get('callsign', '')
+        if new_cs and new_cs != 'UNK C/S':
+          row['callsign'] = new_cs
+          updated += 1
       rows.append(row)
 
   if updated:
@@ -189,6 +190,18 @@ if __name__ == "__main__":
     with open(output_file, 'w', newline='') as f:
       writer = csv.DictWriter(f, fieldnames=fieldnames)
       writer.writeheader()
+  else:
+    # Pre-populate missing_info_dict from existing CSV so callsigns survive restarts
+    with open(output_file, 'r', newline='') as f:
+      for row in csv.DictReader(f):
+        h  = row.get('hex', '').strip()
+        cs = row.get('callsign', '').strip()
+        sq = row.get('squawk', '').strip()
+        if h and cs and cs != 'UNK C/S':
+          missing_info_dict.setdefault(h, {})['callsign'] = cs
+        if h and sq and sq != 'Unavailable':
+          missing_info_dict.setdefault(h, {})['squawk'] = sq
+    print(f"Pre-loaded {len(missing_info_dict)} known aircraft from existing CSV.")
 
   for i in range(MINUTES_TO_RUN):
     try:
