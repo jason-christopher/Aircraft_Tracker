@@ -140,27 +140,29 @@ def backfill_unknown_callsigns(output_file, fieldnames):
   global unknown_callsign_hexes
   hexes_to_update = {h for h in unknown_callsign_hexes if h in missing_info_dict}
   if not hexes_to_update:
-    return 0
+    return 0, 0
 
   rows = []
-  updated = 0
+  updated_records = 0
+  updated_hexes = set()
   with open(output_file, 'r', newline='') as f:
     for row in csv.DictReader(f):
       if row['hex'] in hexes_to_update and row['callsign'] == 'UNK C/S':
         new_cs = missing_info_dict[row['hex']].get('callsign', '')
         if new_cs and new_cs != 'UNK C/S':
           row['callsign'] = new_cs
-          updated += 1
+          updated_records += 1
+          updated_hexes.add(row['hex'])
       rows.append(row)
 
-  if updated:
+  if updated_records:
     with open(output_file, 'w', newline='') as f:
       writer = csv.DictWriter(f, fieldnames=fieldnames)
       writer.writeheader()
       writer.writerows(rows)
     unknown_callsign_hexes -= hexes_to_update
 
-  return updated
+  return len(updated_hexes), updated_records
 
 
 def get_output_file():
@@ -243,8 +245,9 @@ if __name__ == "__main__":
         if record['callsign'] == 'UNK C/S':
           unknown_callsign_hexes.add(record['hex'])
 
-      backfilled = backfill_unknown_callsigns(output_file, fieldnames)
-      print(f"Run {i+1}/{MINUTES_TO_RUN}: Saved {len(aircraft_data)} aircraft. Backfilled {backfilled} callsign(s).")
+      aircraft_backfilled, records_backfilled = backfill_unknown_callsigns(output_file, fieldnames)
+      backfill_str = f" | Backfilled {aircraft_backfilled} aircraft ({records_backfilled} records)" if aircraft_backfilled else ""
+      print(f"Run {i+1}/{MINUTES_TO_RUN}: Saved {len(aircraft_data)} aircraft.{backfill_str}")
 
     except Exception as e:
       print(f"Run {i+1}/{MINUTES_TO_RUN}: ERROR — {e}")
