@@ -1,12 +1,6 @@
 name: Nightly Aircraft Collection
 
 # GitHub Actions cron uses UTC.
-# Adjust the hour to match your local midnight:
-#   UTC-4 (EDT)  → hour: 4
-#   UTC-5 (CDT)  → hour: 5
-#   UTC-6 (MDT)  → hour: 6
-#   UTC-7 (PDT)  → hour: 7
-#   UTC-8 (PST)  → hour: 8
 on:
   schedule:
     - cron: '1 21 * * *'   # 00:01 Jeddah time (UTC+3)
