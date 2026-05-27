@@ -1,0 +1,54 @@
+name: Nightly Aircraft Collection
+
+# GitHub Actions cron uses UTC.
+# Adjust the hour to match your local midnight:
+#   UTC-4 (EDT)  → hour: 4
+#   UTC-5 (CDT)  → hour: 5
+#   UTC-6 (MDT)  → hour: 6
+#   UTC-7 (PDT)  → hour: 7
+#   UTC-8 (PST)  → hour: 8
+on:
+  schedule:
+    - cron: '1 7 * * *'   # 00:01 PDT (UTC-7) — change hour to match your timezone
+  workflow_dispatch:        # Allows a manual run from the Actions tab at any time
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 200    # Slightly over MINUTES_TO_RUN (180) to allow clean exit
+
+    permissions:
+      contents: write       # Needed to commit data back to the repo
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install collector dependencies
+        run: pip install requests geopy python-dotenv
+
+      - name: Run collector
+        env:
+          MY_LAT: ${{ secrets.MY_LAT }}
+          MY_LON: ${{ secrets.MY_LON }}
+          ADSB_KEY: ${{ secrets.ADSB_KEY }}
+        run: python collectors/collect_my_api.py
+
+      - name: Commit and push collected data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --staged --quiet; then
+            echo "No new data to commit."
+          else
+            git commit -m "Collected data $(date -u +%Y-%m-%d)"
+            git pull --rebase
+            git push
+          fi
