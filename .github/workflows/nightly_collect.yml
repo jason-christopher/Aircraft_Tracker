@@ -9,7 +9,7 @@ name: Nightly Aircraft Collection
 #   UTC-8 (PST)  → hour: 8
 on:
   schedule:
-    - cron: '1 4 * * *'   # 00:01 AST (UTC-4)
+    - cron: '1 21 * * *'   # 00:01 Jeddah time (UTC+3)
   workflow_dispatch:        # Allows a manual run from the Actions tab at any time
 
 jobs:
