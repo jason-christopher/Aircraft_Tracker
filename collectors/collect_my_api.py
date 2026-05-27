@@ -163,12 +163,44 @@ def backfill_unknown_callsigns(output_file, fieldnames):
   return updated
 
 
+def get_output_file():
+  """Return today's CSV path (data/YYYY-MM/YYYY-MM-DD.csv), creating the folder if needed."""
+  today = datetime.now().strftime('%Y-%m-%d')
+  month = today[:7]
+  month_dir = os.path.join(BASE_DIR, 'data', month)
+  os.makedirs(month_dir, exist_ok=True)
+  return os.path.join(month_dir, f'{today}.csv')
+
+
+def preload_known_aircraft():
+  """Scan all daily CSVs and populate missing_info_dict so callsigns survive restarts."""
+  data_dir = os.path.join(BASE_DIR, 'data')
+  records_scanned = 0
+  for month_folder in sorted(os.listdir(data_dir)):
+    month_path = os.path.join(data_dir, month_folder)
+    if not os.path.isdir(month_path) or month_folder == 'Archive':
+      continue
+    for fname in sorted(os.listdir(month_path)):
+      if not fname.endswith('.csv'):
+        continue
+      with open(os.path.join(month_path, fname), 'r', newline='') as f:
+        for row in csv.DictReader(f):
+          h  = row.get('hex', '').strip()
+          cs = row.get('callsign', '').strip()
+          sq = row.get('squawk', '').strip()
+          if h and cs and cs != 'UNK C/S':
+            missing_info_dict.setdefault(h, {})['callsign'] = cs
+          if h and sq and sq != 'Unavailable':
+            missing_info_dict.setdefault(h, {})['squawk'] = sq
+          if h:
+            records_scanned += 1
+  return records_scanned
+
+
 # --- MAIN LOOP ---
 if __name__ == "__main__":
 
   print(MY_LAT, MY_LON)
-
-  output_file = os.path.join(BASE_DIR, 'data', 'aircraft_data_my_api.csv')
 
   fieldnames = ['hex',
           'datetime',
@@ -186,25 +218,20 @@ if __name__ == "__main__":
           'source',
           ]
 
-  if not os.path.exists(output_file):
-    with open(output_file, 'w', newline='') as f:
-      writer = csv.DictWriter(f, fieldnames=fieldnames)
-      writer.writeheader()
-  else:
-    # Pre-populate missing_info_dict from existing CSV so callsigns survive restarts
-    with open(output_file, 'r', newline='') as f:
-      for row in csv.DictReader(f):
-        h  = row.get('hex', '').strip()
-        cs = row.get('callsign', '').strip()
-        sq = row.get('squawk', '').strip()
-        if h and cs and cs != 'UNK C/S':
-          missing_info_dict.setdefault(h, {})['callsign'] = cs
-        if h and sq and sq != 'Unavailable':
-          missing_info_dict.setdefault(h, {})['squawk'] = sq
-    print(f"Pre-loaded {len(missing_info_dict)} known aircraft from existing CSV.")
+  # Pre-populate callsigns from all existing daily CSVs
+  records_scanned = preload_known_aircraft()
+  print(f"Pre-loaded {len(missing_info_dict)} known aircraft ({records_scanned} records scanned).")
 
   for i in range(MINUTES_TO_RUN):
     try:
+      # Recalculate each run so the file rolls over at midnight automatically
+      output_file = get_output_file()
+
+      if not os.path.exists(output_file):
+        with open(output_file, 'w', newline='') as f:
+          writer = csv.DictWriter(f, fieldnames=fieldnames)
+          writer.writeheader()
+
       nested_dict = collect_data()
       aircraft_data = list(nested_dict.values())
 
