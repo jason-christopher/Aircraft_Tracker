@@ -33,6 +33,7 @@ jobs:
           MY_LON: ${{ secrets.MY_LON }}
           ADSB_KEY: ${{ secrets.ADSB_KEY }}
           PYTHONUNBUFFERED: 1
+          TZ: Asia/Riyadh
         run: python collectors/collect_my_api.py
 
       - name: Commit and push collected data
