@@ -3,7 +3,7 @@ name: Nightly Aircraft Collection
 # GitHub Actions cron uses UTC.
 on:
   schedule:
-    - cron: '1 21 * * *'   # 00:01 Jeddah time (UTC+3)
+    - cron: '17 21 * * *'   # ~00:17 Jeddah time (UTC+3) — avoids :00/:01 congestion on GitHub
   workflow_dispatch:        # Allows a manual run from the Actions tab at any time
 
 jobs:
