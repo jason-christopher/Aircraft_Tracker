@@ -220,10 +220,6 @@ if __name__ == "__main__":
           'source',
           ]
 
-  # Pre-populate callsigns from all existing daily CSVs
-  records_scanned = preload_known_aircraft()
-  print(f"Pre-loaded {len(missing_info_dict)} known aircraft ({records_scanned} records scanned).")
-
   for i in range(MINUTES_TO_RUN):
     try:
       # Recalculate each run so the file rolls over at midnight automatically
