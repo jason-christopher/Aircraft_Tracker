@@ -39,6 +39,7 @@ TYPE_MAP = {
   'F18S': 'F/A-18 Hornet',
   'B742': 'E-4B Nightwatch',
   'B752': 'C-32 AIR FORCE TWO',
+  'B748': 'AIR FORCE ONE',
 }
 
 DIRECTION_MAP = [
